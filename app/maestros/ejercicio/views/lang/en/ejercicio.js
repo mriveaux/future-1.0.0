@@ -1,0 +1,20 @@
+var futureLang = {
+    btnAdicionar: 'Add',
+    ttAdicionar: 'Add fiscal year',
+    btnEliminar: 'Delete',
+    ttEliminar: 'Deleting fiscal year',
+    lbTitleEjercicios: 'Years',
+    lbTitlePeriodos: 'Months',
+    lbNombre: 'Name',
+    lbFechainicio: 'Date start',
+    lbFechafin: 'End date',
+    lbAcciones: 'Actions',
+    lbConfirmar: 'Confirmation',
+    lbMsgConfirmar: 'Are you sure that you want to delete the fiscal year <b>{0}</b>?',
+    lbMsgEjercicioAdicionado: 'The fiscal year has been added correctly.',
+    lbMsgEjercicioEliminado: 'The fiscal year has been deleted correctly.',
+    lbMsgErrorEliminado: 'The fiscal year has not been able to be eliminated.',
+    lbAdicionando: 'Saving fiscal year...',
+    lbEliminando: 'Deleting fiscal year...',
+    lbSelElem: 'You must select the fiscal year that you want to delete.'
+};

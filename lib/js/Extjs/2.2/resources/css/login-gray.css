@@ -1,0 +1,144 @@
+body{
+    background: #f1f1f1 none repeat scroll 0 0;
+}
+#login {
+    margin: auto;
+}
+#backgrond {
+    margin:auto;
+    /* navegadores sin soporte */
+    background-color: #295AB5 !important;
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(#4285F4, #4285F4, #295AB5);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(#4285F4, #4285F4, #295AB5);
+    /* Opera 11.10+ */
+    background: -o-linear-background(#4285F4, #4285F4, #295AB5);
+    /* IE 10 */
+    background: -ms-linear-background(#4285F4, #4285F4, #295AB5);
+    /* estándar */
+    background: linear-gradient(#4285F4, #4285F4, #295AB5);
+    border: 1px solid #333333;
+    box-shadow: none;
+    /*border-radius: 7px 7px 7px 7px;*/
+    padding: 20px 0;
+    box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);	
+    width: 325px;
+    height: 250px;	
+}
+#backgrond .inner input[type=text],input[type=password]{
+    padding:5px 5px;
+    border:1px solid #ddd;
+    background:#fbfbfb none repeat scroll 0 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+    color: #32373c;
+    outline: 0 none;
+    transition: border-color 50ms ease-in-out 0s;
+    font-size:18px;
+    width: 300px;
+}
+#backgrond .inner input[type=text]:focus,input[type=password]:focus{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(255, 255, 255, 0.8);
+    border:1px solid #5599bb;
+}
+#backgrond .inner label{
+    color: #fff;
+    float: left;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    margin: 10px 15px;
+}
+#backgrond .inner [type=submit]{
+    float: right;
+    margin: 0 12px;
+}
+#backgrond .center [type=submit]{
+    margin: 0 12px;
+}
+.login-text{
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    margin:0 0 10px 10px;
+    width: 100px;
+    font-size:16px;
+    height: 30px;		
+}
+#backgrond p{
+    margin:10px 10px 2px 2px;
+    text-align:left;
+}
+#backgrond h1{
+    background-image: url("/lib/css/images/logo-small.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 300px 80px;
+    display: block;
+    height: 60px;
+    margin-top: 0;
+    outline: 0 none;
+    overflow: hidden;
+    padding-top: 20px;
+    text-indent: -9999px;
+    width: 325px;
+}
+.relleno {
+    background: url("../images/r.png");
+    background-color: #B3B3B3;
+}
+.input-icon {
+    position: relative;
+}
+.input-icon i {
+    color: #7D8286;
+    display: block;
+    font-size: 16px;
+    height: 16px;
+    margin: 11px 2px 4px 20px;
+    position: absolute;
+    text-align: center;
+    width: 16px;
+}
+.input-icon input {
+    padding-left: 33px !important;
+}
+.form-actions {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fff;
+    border-color: -moz-use-text-color -moz-use-text-color #eee;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    clear: both;
+    margin-left: -30px;
+    margin-right: -30px;
+    padding: 0 30px 25px;
+}
+.btn-default {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+.btn {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 5px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333;
+}

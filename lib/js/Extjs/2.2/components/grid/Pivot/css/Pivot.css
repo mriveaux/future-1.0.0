@@ -1,0 +1,14 @@
+/*!
+ * Ext JS Library 3.3
+ * @namespace Ext.grid.Pivot
+ * Copyright(c) 2006-2010 Ext JS, Inc.
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ * @version 1.0-0
+ */
+td.ux-grid-hd-group-cell {
+    background: -moz-linear-gradient(top, #F9F9F9, #EBECEE);
+    border: 1px solid #D0D0D0;
+    border-left: none;
+    border-top: none;
+}

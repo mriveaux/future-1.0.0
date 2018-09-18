@@ -1,0 +1,85 @@
+.x-body {
+    font-family:helvetica,tahoma,verdana,sans-serif;
+    font-size:13px;
+}
+#msg-div {
+    position:absolute;
+    left:35%;
+    top:10px;
+    width:350px;
+    z-index:20000;
+}
+#msg-warn {
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:400px;
+    margin-left:-2%;
+    z-index:20000;
+}
+#msg-info {
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:400px;
+    margin-left:-2%;
+    z-index:20000;
+}
+#msg-quest {
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:400px;
+    margin-left:-2%;
+    z-index:20000;
+}
+#msg-error {
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:400px;
+    margin-left:-2%;
+    z-index:20000;
+}
+#msg-div .msg {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webwit-border-radius: 8px;
+    background: #F6F6F6;
+    border: 2px solid #5fa2dd;
+    margin-top: 3px;
+    padding: 10px 20px 30px 20px;
+    color: #555;
+}
+#msg-div .msg h3 {
+    margin: 0 0 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#msg-div .msg p {
+    margin: 0;
+}
+.msg > span.x-message-box-info{
+    float: left;
+    width: 47px;
+    height: 32px;
+    background: transparent url(/lib/css/images/icon-info.gif) no-repeat top left;
+}
+.msg > span.x-message-box-warning{
+    float: left;
+    width: 47px;
+    height: 32px;
+    background: transparent url(/lib/css/images/icon-warn.gif) no-repeat top left;
+}
+.msg > span.x-message-box-question{
+    float: left;
+    width: 47px;
+    height: 32px;
+    background: transparent url(/lib/css/images/icon-quest.gif) no-repeat top left;
+}
+.msg > span.x-message-box-error{
+    float: left;
+    width: 47px;
+    height: 32px;
+    background: transparent url(/lib/css/images/icon-error.gif) no-repeat top left;
+}

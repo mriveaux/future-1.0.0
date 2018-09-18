@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<phpmail>
+    <host>pop.etecsa.cu</host>
+    <smtpAuth>true</smtpAuth><!-- fijo, se edita aqui -->
+    <smtpSecure>none</smtpSecure><!-- fijo, se edita aqui -->
+    <port>25</port>
+    <user>adolfo.delapaz</user>
+    <password>MTQyODkxMTMxNzc2MTQ3NDYzMjMwNDA3MzUyODQzMjkxNjA3MzM1MjQ4MzQyMjMyMzYwMDA3MzQ5Mjg4Mjk4MTIzMjgxOTY4MzA0NzExMjg1MTYzMjMwNDA3MTQ1MTY4MTk0NDg4MTk5ODE2MTkxODUxMTQyODkxMjk0ODU2MTk3MTQzMTk5ODE2MzIxNDk2MTQ1MTY4MzUyODQzMzI0OTA3MjE5MDMxMjQ4MDExMTMxNzc2MjM2MjAzMjM2MjAzMjM2MjAzMjM2MjAzMzM1MjQ4MjE2MjMyMTQ3NDYzMzQyMjMyMTg0MDQ4MTYxNjExMTU0NDU2MzIxNDk2MzQ1NzUxMjQ1MDMyMjg1MTYzMzI0OTA3MzE0NzI4MjMwNDA3Mjk0ODU2MjQyMDcxMjk0ODU2MjU0MDIzMzIxNDk2MTk5ODE2MTg0MDQ4MjM2MjAzMzA0NzExMTY2NDcxMzU2NDE2MTk0NDg4</password>
+    <fromName>Adolfo de la Paz Machin</fromName>
+    <fromEmail>adolfo.delapaz@etecsa.cu</fromEmail>
+    <token>vgbicQ0DFC/fEFn0woMW*SSSSrL1t@74nuVcolQfUfYnF@Si9xD</token>
+</phpmail>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+    <node>
+        <driver>pgsql</driver>
+        <host>localhost</host>
+        <port>5432</port>
+        <db>future</db>
+        <usuario>future</usuario>
+        <password>48515269311448356771 45781498813921814599 50830316286925936608 47303951955541480298 18718341793729943287</password>
+    </node>
+</root>

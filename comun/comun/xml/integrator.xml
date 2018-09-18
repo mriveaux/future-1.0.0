@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+    <seguridad>
+        <Usuarios src ="/app/seguridad/usuarios"></Usuarios>
+        <Roles src="/app/seguridad/roles"></Roles>
+        <Gruporoles src="/app/seguridad/gruporoles"></Gruporoles>
+        <Bloqueousuario src="/app/seguridad/bloqueousuario"></Bloqueousuario>
+    </seguridad>
+	
+    <configuracion>
+        <Funcionalidades src="/app/configuracion/funcionalidades"></Funcionalidades>
+        <Modulos src="/app/configuracion/modulos"></Modulos>
+    </configuracion>
+	
+    <capitalhumano>
+        <Trabajadores src ="/app/rrhh/trabajadores"></Trabajadores>
+        <Controlpersonal src ="/app/rrhh/controlpersonal"></Controlpersonal>
+        <Seleccion src ="/app/rrhh/seleccion"></Seleccion>
+    </capitalhumano>
+	
+    <maestros>
+        <NomEjercicio src ="/app/maestros/ejercicio"></NomEjercicio>
+        <NomTerritorio src ="/app/maestros/territorio"></NomTerritorio>
+        <NomPais src ="/app/maestros/pais"></NomPais>
+        <Dpa src ="/app/maestros/dpa"></Dpa>
+        <NomTipodpa src ="/app/maestros/tipodpa"></NomTipodpa>
+        <NomDpa src ="/app/maestros/tipodpa"></NomDpa>
+        <NomOrganismo src ="/app/maestros/organismo"></NomOrganismo>
+        <NomProducto src ="/app/maestros/producto"></NomProducto>
+        <NomUnidadmedida src ="/app/maestros/unidadmedida"></NomUnidadmedida>
+    </maestros>
+    
+    <soporte>
+        <Recomendacion src ="/app/soporte/recomendacion"></Recomendacion>
+        <NoConformidad src ="/app/soporte/noconformidad"></NoConformidad>
+        <Notificacion src ="/app/soporte/notificacion"></Notificacion>
+    </soporte>
+    
+    <estructuraorg>
+        <Maestros src ="/app/estructuraorg/maestros"></Maestros>
+        <Entidades src ="/app/estructuraorg/entidades"></Entidades>
+        <Plantilla src ="/app/estructuraorg/plantilla"></Plantilla>
+    </estructuraorg>
+    
+    <taller>
+        <Maestros src ="/app/taller/maestros"></Maestros>
+    </taller>
+    
+</root>

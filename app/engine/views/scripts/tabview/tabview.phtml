@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php echo $this->appname; ?></title>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->extcss; ?>"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libcss; ?>fonts/FontAwesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/portal.css"/>		
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/iconos<?php echo $this->theme; ?>.css"/>			
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Bootstrap/css/bootstrap-custom.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/engine<?php echo $this->theme; ?>.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/file-upload.css"/>
+        <link rel="shortcut icon" href="<?php echo $this->libcss; ?>images/favicon.ico"/> 
+    </head>
+    <body>  
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/lang/<?php echo $this->lang; ?>/tabview.js"></script>
+        <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top" id="navEngine">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a id="idhomelink" href="javascript:goToIndex()" role="button" data-toggle="tooltip"><span><i class="fa fa-1x fa-home"></i> ...</span></a></li>
+                    <li><a id="idcontactlink" href="javascript:goToContact()" role="button"><span><i class="fa fa-1x fa-address-book"></i> ...</span></a></li>
+                    <li class="dropdown">
+                        <a id="idsoportlink" href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"><span><i class="fa fa-1x fa-life-bouy"></i> ...</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a id="idhelplink" href="javascript:goToHelp()" role="button"><span><i class="fa fa-1x fa-question-circle blue-button"></i> ...</span></a></li>
+                            <li><a id="idrecomendlink" href="javascript:regUserRecomendation()" role="button"><span><i class="fa fa-1x fa-thumbs-up warning"></i> ...</span></a></li>
+                            <li><a id="idnoconflink" href="javascript:regNonConformity()" role="button"><span><i class="fa fa-1x fa-exclamation-triangle danger"></i> ...</span></a></li>
+                            <li class="divider"></li>
+                            <li><a id="idlegallink" href="javascript:goToLegalInfo()" role="button"><span><i class="fa fa-1x fa-legal danger"></i> ...</span></a></li>
+                            <li><a id="idaboutlink" href="javascript:goToAboutUs()" role="button"><span><i class="fa fa-1x fa-exclamation-circle info"></i> ...</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav"><li><a href="javascript:goToChangeEntity()" id="entity" style="float: left; margin-left: 100px !important;"></a><li></ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="dropdownmenuinbox" class="dropdown">
+                        <a id="menuinbox" href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"><span class="badge badge-danger" id="numNotifications"> ... </span><i class="fa fa-1x fa-bell"></i> ...<span class="caret"></span></a>
+                        <ul id="dropdownmessageinbox" class="dropdown-menu alert-dropdown">
+                            <li>
+                                <a href="#"> ... <span class="label label-default"> ... </span></a>
+                            </li>
+                            <li class="divider"></li><li><a id="idupdatelink" href="javascript:updateNotification()"><span><i class="fa fa-1x fa-refresh primary"></i> ...</span></a></li><li><a id="idviewalllink" href="javascript:goToNotification()"><span><i class="fa fa-1x fa-list-ul success"></i> ...</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a id="usermenuprofile" href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu" aria-expanded="false"><i class="fa fa-1x fa-fw fa-user-circle-o"></i> Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a id="dmUserProfile" href="javascript:showPerfilWindow()"><span><i class="fa fa-1x fa-fw fa-user greenlight-button"></i> ...</span></a></li>
+                            <li><a id="dmChangePasswd" href="javascript:cambiarContrasenna()"><span><i class="fa fa-1x fa-fw fa-key warning"></i> ...</span></a></li>
+                            <li><a id="dmChangeEntity" href="javascript:goToChangeEntity()"><span><i class="fa fa-1x fa-fw fa-home blue-button"></i> ...</span></a></li>
+                            <li><a id="dmAparience" href="javascript:showAparience()"><span><i class="fa fa-1x fa-fw fa-desktop info"></i> ...</span></a></li>
+                            <li class="divider"></li>
+                            <li><a id="dmCloseSession" href="javascript:cerrarSesion()"><span><i class="fa fa-1x fa-fw fa-power-off danger"></i> ...</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <script language="javascript" type="text/javascript">function sin_foto() {
+                return '<?php echo $this->libjs . 'Extjs/2.2/resources/images/no-picture.png'; ?>';
+            }</script>
+        <script language="javascript" type="text/javascript">function sin_imagennc() {
+                return '<?php echo $this->libjs . 'Extjs/2.2/resources/images/blank.gif'; ?>';
+            }</script>
+        <script language="javascript" type="text/javascript">function getTheme() {
+                return '<?php echo $this->theme; ?>';
+            }</script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-jquery-adapter.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-base.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-all.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/lang/ext-lang-<?php echo $this->lang; ?>.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/funciones-utiles.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/Portal.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/PortalColumn.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/Portlet.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/components/form/FileUploadField/FileUploadField.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Utils/Base64cypt.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Utils/md5.js"></script>		
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-idle-timeout/jquery.idletimeout.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-idle-timeout/jquery.idletimer.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-idle-timeout/ui-idletimeout.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/js/tabview/tabview.min.js"></script>
+    </body>
+</html>

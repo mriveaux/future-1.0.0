@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exceptions>
+    <MT0000>
+        <mensaje>Ha ocurrido un error no controlado por el sistema.</mensaje>
+        <descripcion>Se ha lanzado una excepción no controlada por el sistema.</descripcion>
+    </MT0000>
+    <MT0001>
+        <mensaje>Mi primera excepción</mensaje>
+        <descripcion>Estos son los detalles de mi primera excepción.</descripcion>
+    </MT0001>
+    
+    <LDAP0001>
+        <mensaje>En estos momentos no se ha podido establecer la conexión con el servidor LDAP</mensaje>
+        <descripcion>El servidor LDAP no se encuentra disponible o puede haber ocurrido algún error.</descripcion>
+    </LDAP0001>
+    <LDAP0002>
+        <mensaje>Los datos proporcionados no son válidos para establecer la conexión con el servidor LDAP.</mensaje>
+        <descripcion>Los datos de la configuración para establecer la conexión no son correctos, vuelva a revisarlos.</descripcion>
+    </LDAP0002>
+</exceptions>

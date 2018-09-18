@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system>
+    <environment>
+        <var>dev</var>
+        <firebug>1</firebug>
+        <sessiontime>3600</sessiontime>
+        <lang>es</lang>
+        <theme>default</theme>
+        <workspace>portal</workspace>
+        <menu>modern</menu>
+        <extjs>4.2</extjs>
+    </environment>
+    <blockadeip>
+        <ip>true</ip>
+        <number>5</number>
+        <type>1</type>
+        <cachetime>900</cachetime>
+    </blockadeip>
+    <blockadeuser>
+        <ip>true</ip>
+        <number>3</number>
+        <type>1</type>
+        <cachetime>900</cachetime>
+        <sessiontime>900</sessiontime>
+    </blockadeuser>
+    <access>
+        <type>mixed</type>
+    </access>
+    <parameters>
+        <idpais>657</idpais>
+    </parameters>
+    <validation>
+        <frontend>true</frontend>
+        <backend>false</backend>
+    </validation>
+</system>

@@ -1,0 +1,66 @@
+<!--<!DOCTYPE HTML>-->
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php echo $this->appname; ?></title>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->extcss; ?>"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/login.css"/>	
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/login-tree.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libcss; ?>fonts/FontAwesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/iconos.css"/>	
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/data-view.css"/>	
+        <link rel="shortcut icon" href="<?php echo $this->libcss; ?>images/favicon.ico" type="image/x-icon"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div class="col-md-3 col-md-offset-3">-->
+                <table id="tablaindex" width="100%" height="100%">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <div id="formIndex"> 
+                                <div id="login" class="login">
+                                    <div id="backgrond">
+                                        <h1></h1>
+                                        <form name="loginform" id="loginform" action="javascript:validarCampos()" method="post">
+                                            <br>
+                                            <div class="inner">
+                                                <div class="input-icon">
+                                                    <i class="fa fa-user"></i>
+                                                    <input id="loginuser" name="user" placeholder="Usuario" maxlength="30" type="text" maxlength="20">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="inner">
+                                                <div class="input-icon">
+                                                    <i class="fa fa-lock"></i>
+                                                    <input id="loginpass" name="pass" placeholder="Contrase&ntilde;a" maxlength="50" type="password" maxlength="20">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="inner">
+                                                <label id="lbRememberme" class="checkbox">
+                                                    <input id="rememberme" type="checkbox" name="remember" value="1"/> Recu&eacute;rdame </label>
+                                                <button id="btnLogin" type="submit" class="btn btn-default"> Acceder</button>
+                                            </div>
+                                        </form>
+                                    </div>	
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>        
+                <!--</div>-->
+            </div>
+        </div>
+        <script type="text/javascript"> var globalAuthToken = '<?php echo $this->futureToken; ?>';</script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-base.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-all.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/lang/ext-lang-<?php echo $this->lang; ?>.js"></script>
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/lang/<?php echo $this->lang; ?>/index.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/funciones-utiles.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Utils/Base64cypt.js"></script>
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/js/index/index.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aspect>
+    <loggin name="loggin" src="/comun/comun/aspect" active="1"/>
+    <trace name="trace" src="/comun/comun/aspect" active="1"/>
+    <log name="log" src="/comun/comun/aspect" active="1"/>
+</aspect>

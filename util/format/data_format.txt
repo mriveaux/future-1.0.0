@@ -1,0 +1,86 @@
+var User = Ext.ModelMgr.getModel('User');
+var store = Ext.data.StoreManager.lookup('myStore');
+
+Nomenclatura de letras en hexadecimal:
+Letras con tilde    Letras en hexadecimal		Letra en HTML
+á	      	             \xE1						&aacute;
+é   	  	             \xE9						&eacute;
+í   	  	             \xED						&iacute;
+ó   	 	             \xF3						&oacute;
+ú    	 	             \xFA						&uacute;
+ñ    		             \xF1						&ntilde;
+Á     		             \xC1						&Aacute;
+É     		             \xC9						&Eacute;
+Í      		             \xCD						&Iacute;
+Ó          		         \xD3						&Oacute;
+Ú          		         \xDA						&Uacute;
+Ñ          		         \xD1						&Ntilde;
+No         		         N.\xBA						&#xBA				&#8470;			&#x2116;			
+¿													&iquest;
+?
+
+//Regex JavaScript
+//Letras, numeros(a-zA-Z0-9,letras con tildes, ñ y caracteres especiales.,-+*/\%#&")
+maskRe: /^([a-zA-Z0-9\xf3\xf1\xe1\xe9\xed\xfa\xd1\xc1\xc9\xcd\xd3\xda\xfc\s\.\,\-\+\*\/\(\)\%\#\&\"]+?[a-zA-Z]*)+$/,
+regex: /^([a-zA-Z0-9\xf3\xf1\xe1\xe9\xed\xfa\xd1\xc1\xc9\xcd\xd3\xda\xfc\.\,\-\+\*\/\(\)\%\#\&\"]+(\s{1})?[a-zA-Z0-9\xf3\xf1\xe1\xe9\xed\xfa\xd1\xc1\xc9\xcd\xd3\xda\xfc\.\,\-\+\*\/\(\)\%\#\&\"]*)+$/,
+
+//Pattens HTML5
+//Passwd must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter
+pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+//6 or more characters
+pattern=".{6,}"
+//Only 3 letters
+pattern="color:mediumblue">="[A-Za-z]{3}" || pattern="\w{3}"
+//Email characters@characters.domain, The domain can only write 2 to 3 letters from a to z
+pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+//Url must start with http:// or https:// followed by at least one character
+pattern="https?://.+"
+
+
+"(+?\d)[0-9]{8}"
+
+(+[0-9]{2,3})?[0-9]{8} ((,{1}s{0,1}((+[0-9]{2,3}))?[0-9]{8})+)*$
+
+
+*** Patrones de fechas en JavaScript ***
+Date.patterns = {
+    ISO8601Long:"d/m/Y H:i:s",
+    ISO8601Short:"d/m/Y",
+    ShortDate: "n/j/Y",
+    LongDate: "l, F d, Y",
+    FullDateTime: "l, F d, Y g:i:s A",
+    MonthDay: "F d",
+    ShortTime: "g:i A",
+    LongTime: "g:i:s A",
+    SortableDateTime: "d/m/Y\\TH:i:s",
+    UniversalSortableDateTime: "d/m/Y H:i:sO",
+    YearMonth: "F, Y"
+};
+
+	//Content-type
+	"pdf" => "application/pdf",
+	"txt" => "text/plain",
+	"html" => "text/html",
+	"htm" => "text/html",
+	"exe" => "application/octet-stream",
+	"zip" => "application/zip",
+	"doc" => "application/msword",
+	"xls" => "application/vnd.ms-excel",
+	"ppt" => "application/vnd.ms-powerpoint",
+	"gif" => "image/gif",
+	"png" => "image/png",
+	"jpeg" => "image/jpg",
+	"jpg" => "image/jpg",
+	"php" => "text/plain"
+	"dbf" => "application/dbase, application/x-dbase, application/dbf, application/x-dbf, zz-application/zz-winassoc-dbf"
+	"xml" => "text/xml charset=utf-8"
+	"xml" => "application/xml; charset=utf-16"
+	
+
+	*** singleton en php ***
+static public function getInstance() {
+		static $instance;
+		if (!isset($instance))
+			$instance = new self();
+		return $instance;
+}

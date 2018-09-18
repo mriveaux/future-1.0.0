@@ -1,0 +1,21 @@
+var futureLang = {
+    ttaddunidadmedida: 'Add unit of measure',
+    ttmodunidadmedida: 'Modify data of the unit of measure',
+    ttdelunidadmedida: 'Remove data from the unit of measure',
+    lbnombre: 'Name',
+    lbdescripcion: 'Descripction',
+    lbnombreunidadmedida: 'Unit of measure name',
+    lbdelunidadmedida: 'Remove unit of measure',
+    msgaddunidadmedida: 'Adding unit of measure...',
+    msgconfirmaddunidadmedida: 'The unit of measurement was added correctly.',
+    msgchangenameunidadmedida: 'El nombre de la unidad de medida que intenta adicionar ya existe.<br>Cambie el nombre de la unidadde medida que desea adicionar.',
+    msgajaxerror: 'Error al procesar los datos.<br>P&oacute;ngase en contacto con el administrador del sistema.',
+    msgmodunidadmedida: 'Modifying unit of measure...',
+    msgconfirmmodunidadmedida: 'The unit of measurement was modified correctly.',
+    questdeleteunidadmedida: '&iquest;Est&aacute; seguro que desea eliminar la unidad de medida seleccionada?',
+    msgdelunidadmedida: 'Removing unit of measure...',
+    msgconfirmdelunidadmedida: 'The unit of measurement was eliminated correctly.',
+    msgdelunidadmedidaasocied: 'The unit of measure has associated data and can not be deleted.',
+    msgselectunidadmedida: 'No unit of measure selected.',
+    msgchangessuccess: 'The changes were made correctly.'
+};

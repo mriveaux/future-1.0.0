@@ -1,0 +1,27 @@
+var futureLang = {
+    lbadvertencia: 'Warning',
+    ttlporfavor: 'Please wait...',
+    ttentidades: 'List of authorized entities',
+    lbemptyimage: 'Not image to show.',
+    lbacceder: 'Accessing the system for: ',
+    btnatras: 'Back',
+    btnaceptar: 'Accept',
+    btnacceder: 'Login',
+    lbrecuerdame: "<input id='rememberme' type='checkbox' name='remember' value='1'> Remember me",
+    msgloading: 'Loading...',
+    msgloadentidades: 'Loading entities...',
+    msgloaddataentidad: 'Loading entity data...',
+    msgcheckcredentials: 'Checking credentials...',
+    msgnovaliddata: 'Input data are not valid.',
+    msguserdesactivado: 'The user finds himself deactivated temporarily',
+    msgusernoip: 'The user cannot access the system from the current IP address.',
+    msgnoldap: 'In these moments the LDAP server is not available.',
+    msguserblock: 'The user is blocked. Please, contact the administrator.',
+    msgipblock: 'The IP address of the user is blocked. Please, contact the administrator.',
+    msguserorigen: 'The user already has initiated session from another origin.',
+    msgerrorop: 'An error has happened while this operation was committing. Reload one more time and try again.',
+    msgwebsiteop: 'This application is not responsive web.',
+    msgfirebug: "The web development's addon <b>FIREBUG</b> is installed. \n You must to uninstall it to be able to use it in the environment of <b>PRODUCTION</b>.",
+    msgfailure: 'Data has not been able to be checked correctly. Go back to home page of the system and try to erase the historial and the data of the session.'
+
+};

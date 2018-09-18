@@ -1,0 +1,22 @@
+var futureLang = {
+    lbAdd: 'Adicionar',
+    lbAdd2: 'Adicionar sector',
+    lbMod: 'Modificar',
+    lbMod2: 'Modificar sector',
+    lbDel: 'Eliminar',
+    lbDel2: 'Eliminar sector',
+    lbCodigo: 'C&oacute;digo',
+    lbAcciones: 'Acciones',
+    lbMsgConfirmar: String.fromCharCode(191) + 'Est\xE1 seguro que desea eliminar el sector seleccionado?',
+    lbAddOk: 'El sector ha sido adicionado correctamente.',
+    lbModOk: 'El sector ha sido modificado correctamente.',
+    lbDelOk: 'El sector ha sido eliminado correctamente.',
+    lbSaving: 'Guardando...',
+    lbDeleting: 'Eliminando...',
+    lbSelMod: 'Debe seleccionar el sector que desea modificar.',
+    lbSelDel: 'Debe seleccionar el sector que desea eliminar.',
+    lbAddExisteSector: 'El sector que desea adicionar ya existe.',
+    lbModExisteSector: 'El sector que desea modificar ya existe.',
+    lbDatosAsociados: 'El sector que desea eliminar tiene datos asociados.',
+    lbExcepRem: 'Excepci\xF3n remota'
+};

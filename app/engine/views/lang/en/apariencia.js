@@ -1,0 +1,22 @@
+var futureLang = {
+    lbtema: 'Theme',
+    lbidioma: 'Language',
+    lbworkspace: 'Workspace',
+    lbseleccione: 'Select...',
+    lbazul: 'Blue',
+    lbgris: 'Gray',
+    lbneptune: 'Neptune',
+    lbespannol: 'Spanish',
+    lbingles: 'English',
+    lbportugues: 'Portuguese',
+    lbdesktop: 'Web desktop',
+    lbportal: 'Web portal',
+    lbtabview: 'Tab navigation',
+    ttapariencia: 'Change look & feel',
+    btnaceptar: '<b>Accept</b>',
+    btncancelar: '<b>Cancel</b>',
+    msgloadconf: 'Loading appearance...',
+    msgsaveconf: 'Saving appearance config...',
+    msgsuccess: 'The appearance config was saved correctly.',
+    msgerror: 'Error processing data.<br>Please, contact the administrator of the system.'
+};

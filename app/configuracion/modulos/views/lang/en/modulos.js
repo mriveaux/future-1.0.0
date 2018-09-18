@@ -1,0 +1,32 @@
+var futureLang = {
+    lbModulo: 'Modules',
+    lbFuncionalidades: 'Functionalities',
+    btnAdd: 'Add',
+    btnMod: 'Modify',
+    btnDel: 'Delete',
+    btnAcept: 'Accept',
+    btnCancel: 'Cancel',
+    btnTtAdd: 'Add module',
+    btnTtMod: 'Modify module',
+    btnTtDel: 'Delete module',
+    lbNombre: 'Name',
+    lbIndice: 'Index',
+    lbIcon: 'Icon',
+    lbLabel: 'Label lang',
+    lbAbreviatura: 'Abbreviation',
+    lbDescripcion: 'Description',
+    msgLoadFunc: 'Loading modules...',
+    promptDelete: 'Are you sure that you want to delete the selected module?',
+    msgSaveProgress: 'Saving module...',
+    msgAdd1: 'The module was added correctly.',
+    msgAdd2: 'The module that you try to add already exists.',
+    msgMod1: 'The module was modified correctly.',
+    msgMod2: 'The module that you try to modify already exists. <br/>Change the name of the module that you wish to modify.',
+    msgSelElem: 'You must select a module.',
+    msgDelProgress: 'Deleting module...',
+    msgDel1: 'The module was deleted correctly.',
+    msgDel2: 'The module has correlated functionalities and cannot be eliminated.',
+    msgError: 'Error processing data. <br/>Contact with the administrator of the system.'
+};
+
+

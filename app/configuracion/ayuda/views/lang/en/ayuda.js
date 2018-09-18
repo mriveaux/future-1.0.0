@@ -1,0 +1,22 @@
+var futureLang = {
+    lbAdicionar: 'Add',
+    lbTtAdicionar: 'Add help',
+    lbAdicionando: 'Adding help...',
+    lbAddCorrect: 'The help was added correctly.',
+    lbAddIncorrect: 'The help that you try to add already exists. <br/>Change the number of the help that you want to add.',
+    lbNoAdd: 'It was not possible to add the new help.',
+    lbEliminar: 'Delete',
+    lbTtEliminar: 'Delete help',
+    lbEliminando: 'Deleting help...',
+    lbDeleteCorrect: 'The help was deleted correctly.',
+    lbPromptEliminar: 'Are you sure that you want to delete the selected help?',
+    lbDeleteError: 'The help has correlated data and cannot be eliminated.',
+    lbMsgError: 'Error processing data. <br/>Contact with the administrator of the system.',
+    lbNombre: 'Name',
+    lbDescripcion: 'Description',
+    lbModulo: 'Module',
+    lbReferencia: 'Reference',
+    lbAyudaSistema: 'Help of the system',
+    lbGroupTextTpl: '{text} ({[values.rs.length]} {[values.rs.length > 1 ? "Elements" : "Element"]})',
+    lbFuncRegSist: 'Registered functionalities in the system'
+};

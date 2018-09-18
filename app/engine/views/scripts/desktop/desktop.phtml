@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php echo $this->appname; ?></title>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Bootstrap/css/bootstrap-custom-desktop.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->extcss; ?>"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libcss; ?>fonts/FontAwesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/desktop-iconos<?php echo $this->theme; ?>.css"/>			
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/desktop<?php echo $this->theme; ?>.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->libjs; ?>Extjs/2.2/resources/css/file-upload.css"/>
+        <link rel="shortcut icon" href="<?php echo $this->libcss; ?>images/favicon.ico"/> 
+        <style>
+            .copyright {
+                text-align: center;
+                margin: 0 auto;
+                padding: 10px;
+                color: #d0d0d0;
+                font: bold 14px/15px tahoma,arial,verdana,sans-serif;
+                margin-top: -80px;
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body scroll="no">
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/lang/<?php echo $this->lang; ?>/desktop.js"></script>
+        <div id="ux-taskbar">
+            <div id="ux-taskbar-start"></div>
+            <div id="ux-taskbuttons-panel"></div>
+        </div>
+        <div id="x-desktop">
+            <table border="0" style="position: absolute;width:100%;height:100%;" cellpadding="0" cellspacing="0" >
+                <tr>
+                    <td colspan ="3" id="x-desktop-background"></td>
+                </tr>
+                <tr style="border-style: hidden;">
+                    <td id="x-desktop-background"></td>
+                    <!--<td id="x-desktop-logo" style="width:650px;height:450px;"></td>-->
+                    <td id="x-desktop-background" align="center" valign="middle"><img width="617" height="216" src="<?php echo $this->libjs; ?>Extjs/2.2/resources/images/walpapers/desktop<?php echo $this->theme; ?>.png"></td>
+                    <td id="x-desktop-background"></td>
+                </tr>
+                <tr>
+                    <td id="copyright" colspan ="3">
+                        <div class="footer">
+                            <div id="copyright" class="row copyright" align="center">
+                                &copy; GESI - Grupo Especializado en Servicios Inform&aacute;ticos
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script language="javascript" type="text/javascript">function sin_foto() {
+                return '<?php echo $this->libjs . 'Extjs/2.2/resources/images/no-picture.png'; ?>';
+            }</script>
+        <script language="javascript" type="text/javascript">function sin_imagennc() {
+                return '<?php echo $this->libjs . 'Extjs/2.2/resources/images/blank.gif'; ?>';
+            }</script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-jquery-adapter.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-base.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/ext-all.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/lang/ext-lang-<?php echo $this->lang; ?>.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/ext/funciones-utiles.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Extjs/2.2/components/form/FileUploadField/FileUploadField.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Utils/Base64cypt.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Utils/md5.js"></script>	
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/js/desktop/StartMenu.js"></script>
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/js/desktop/TaskBar.js"></script>
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/js/desktop/App.js"></script>
+        <script type="text/javascript" src="<?php echo $this->viewjs; ?>/views/js/desktop/engine-desktop.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-idle-timeout/jquery.idletimeout.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-idle-timeout/jquery.idletimer.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Jquery/jquery-idle-timeout/ui-idletimeout.js"></script>
+        <script type="text/javascript" src="<?php echo $this->libjs; ?>Bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ldap>
+    <host>127.0.0.1</host>
+    <port>389</port>
+    <dn>cn=Manager,dc=maxcrc,dc=com</dn>
+    <password>secret</password>
+    <status>true</status>
+    <stdn>ou=etecsa.cu,ou=People,dc=etecsa,dc=cu</stdn>
+</ldap>

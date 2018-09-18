@@ -1,0 +1,20 @@
+var futureLang = {
+    btnAdicionar: 'Adicionar',
+    ttAdicionar: 'Adicionar ejercicio',
+    btnEliminar: 'Eliminar',
+    ttEliminar: 'Eliminar ejercicio',
+    lbTitleEjercicios: 'Ejercicios',
+    lbTitlePeriodos: 'Per&iacute;odos',
+    lbNombre: 'Nombre',
+    lbFechainicio: 'Fecha inicio',
+    lbFechafin: 'Fecha fin',
+    lbAcciones: 'Acciones',
+    lbConfirmar: 'Confirmaci&oacute;n',
+    lbMsgConfirmar: String.fromCharCode(191) + 'Est\xE1 seguro que desea eliminar el ejercicio <b>{0}</b>?',
+    lbMsgEjercicioAdicionado: 'El ejercicio ha sido adicionado correctamente.',
+    lbMsgEjercicioEliminado: 'El ejercicio ha sido eliminado correctamente.',
+    lbMsgErrorEliminado: 'No se ha podido eliminar el ejercicio.',
+    lbAdicionando: 'Adicionando ejercicio...',
+    lbEliminando: 'Eliminando ejercicio...',
+    lbSelElem: 'Debe seleccionar el ejercicio que desea eliminar.'
+};

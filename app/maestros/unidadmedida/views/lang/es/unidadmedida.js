@@ -1,0 +1,21 @@
+var futureLang = {
+    ttaddunidadmedida: 'Adicionar unidad de medida',
+    ttmodunidadmedida: 'Modificar datos de la unidad demedida',
+    ttdelunidadmedida: 'Eliminar datos de la unidad de medida',
+    lbnombre: 'Nombre',
+    lbdescripcion: 'Descripci\xF3n',
+    lbnombreunidadmedida: 'Nombre unidadmedida',
+    lbdelunidadmedida: 'Eliminar unidad de medida',
+    msgaddunidadmedida: 'Adicionando unidad de medida...',
+    msgconfirmaddunidadmedida: 'La unidad de medida fue adicionada correctamente.',
+    msgchangenameunidadmedida: 'El nombre de la unidad de medida que intenta adicionar ya existe.<br>Cambie el nombre de la unidadde medida que desea adicionar.',
+    msgajaxerror: 'Error al procesar los datos.<br>P&oacute;ngase en contacto con el administrador del sistema.',
+    msgmodunidadmedida: 'Modificando unidad de medida...',
+    msgconfirmmodunidadmedida: 'La unidad de medida fue modificada correctamente.',
+    questdeleteunidadmedida: '&iquest;Est&aacute; seguro que desea eliminar la unidad de medida seleccionada?',
+    msgdelunidadmedida: 'Eliminando unidad de medida...',
+    msgconfirmdelunidadmedida: 'La unidad de medida fue eliminada correctamente.',
+    msgdelunidadmedidaasocied: 'La unidad de medida tiene datos asociados y no puede ser eliminada.',
+    msgselectunidadmedida: 'No se ha seleccionado ninguna unidad de medida.',
+    msgchangessuccess: 'Los cambios fueron realizados correctamente.'
+};

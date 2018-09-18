@@ -1,0 +1,21 @@
+.filaVerde .x-grid3-cell-inner{
+    color:black;
+    background-color:#dffbda;
+}
+.filaRoja .x-grid3-cell-inner{
+    color:black;
+    background-color:#f2e2e2;
+}
+.filaAmarilla .x-grid3-cell-inner{
+    color:black;
+    background-color:#FFFA05;
+}
+.negrita .x-grid3-cell-inner{
+    color:black;
+    font-weight: bold;
+}
+.x-grid3-row td{
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 16px;
+}

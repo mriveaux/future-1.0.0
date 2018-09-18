@@ -1,0 +1,20 @@
+var futureLang = {
+    lbAdd: 'Add',
+    lbAdd2: 'Add territory',
+    lbMod: 'Modify',
+    lbMod2: 'Modify territory',
+    lbDel: 'Delete',
+    lbDel2: 'Delete territory',
+    lbNombre: 'Name',
+    lbAbreviatura: 'Abbreviation',
+    lbCodigo: 'Code',
+    lbAcciones: 'Actions',
+    lbMsgConfirmar: 'Are you sure that you want to delete the territory <b>{0}</b>?',
+    lbAddOk: 'The territory has been added correctly.',
+    lbModOk: 'The territory has been modified correctly.',
+    lbDelOk: 'The territory has been deleted correctly.',
+    lbSaving: 'Saving...',
+    lbDeleting: 'Deleting...',
+    lbSelMod: 'You must select the territory that you want to modify.',
+    lbSelDel: 'You must select the territory that you want to delete.'
+};

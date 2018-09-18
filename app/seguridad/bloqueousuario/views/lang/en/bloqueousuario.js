@@ -1,0 +1,21 @@
+var futureLang = {
+    lbbtnDesbloquear: 'Unlock',
+    tooltipDesbloquear: 'Unlock user',
+    lbUsuario: 'User',
+    lbIP: 'IP',
+    lbUsuariodesbloqueo: 'Unlocker user',
+    lbTipobloqueo: 'Lock type',
+    lbFechabloqueo: 'Lock date',
+    lbFechadesbloqueo: 'Unlock date',
+    lbIPbloqueo: 'Lock IP',
+    lbEstado: 'State',
+    lbBloqueado: 'Locked',
+    lbRegistrado: 'Register',
+    lConfirmacion: 'Confirmation',
+    ttUsuariosbloqueados: 'Locked users',
+    ttHistBloqueos: 'Lock history',
+    msgaddrol: 'Unlocking...',
+    msgconfirmaddrol: 'El desbloqueo fue realizado correctamente.',
+    msgajaxerror: 'Error al procesar los datos.<br>P&oacute;ngase en contacto con el administrador del sistema.',
+    lbQuestdesbloquear: '&iquest;Est&aacute; seguro que desea realizar el desbloqueo?'
+};
