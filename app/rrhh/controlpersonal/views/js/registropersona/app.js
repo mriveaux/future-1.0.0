@@ -1,6 +1,6 @@
 /* global Ext */
 Ext.application({
-    requires: ['Ext.container.Viewport',
+    requires: ['Ext.container.Viewport', 'Ext.layout.container.Border',
         'Ext.grid.*', 'Ext.data.*',
         'Ext.toolbar.Paging', 'Ext.ux.ProgressBarPager', 'Ext.ux.form.SearchField',
         'Ext.ModelManager',
