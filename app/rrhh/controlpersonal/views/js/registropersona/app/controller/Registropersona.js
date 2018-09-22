@@ -14,7 +14,6 @@ Ext.define('Registropersona.controller.Registropersona', {
     init: function() {
         this.control({
             'list_persona': {
-                // itemdblclick: this.editRegistropersona,
                 selectionchange: this.onPersonaSelectionChange
             },
             'list_persona button[action=add]': {

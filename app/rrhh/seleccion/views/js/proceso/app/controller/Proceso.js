@@ -10,7 +10,7 @@ Ext.define('Proceso.controller.Proceso', {
     init: function() {
         this.control({
             'list_proceso': {
-                itemdblclick: this.modProceso,
+                // itemdblclick: this.modProceso,
                 selectionchange: this.onProcesoSelectionChange
             },
             'list_proceso button[action=add]': {
@@ -21,9 +21,6 @@ Ext.define('Proceso.controller.Proceso', {
             },
             'list_proceso button[action=del]': {
                 click: this.delProceso
-            },
-            'list_proceso button[action=plus]': {
-                click: this.showPlusWindow
             },
             '#start_proceso': {
                 click: this.startProceso

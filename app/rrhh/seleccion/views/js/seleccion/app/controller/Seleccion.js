@@ -35,9 +35,6 @@ Ext.define('Seleccion.controller.Seleccion', {
             'list_seleccion button[action=del]': {
                 click: this.delSeleccion
             },
-            'list_seleccion button[action=plus]': {
-                click: this.showPlusWindow
-            },
             'edit_seleccion button[action=aceptar]': {
                 click: this.saveSeleccion
             },
@@ -46,14 +43,14 @@ Ext.define('Seleccion.controller.Seleccion', {
             }
         });
     },
-    onSeleccionSelectionChange: function(sm, selected) {
+    onSelectionChange: function(sm, selected) {
         var me = this;
         me.getList_seleccion().down('button[action=mod]').disable();
         me.getList_seleccion().down('button[action=del]').disable();
-        me.getList_seleccion().down('button[action=status]').disable();
+        // me.getList_seleccion().down('button[action=status]').disable();
         if (sm.hasSelection()) {
             me.validateAction(selected);
-            me.validateActionsStatus(selected);
+            // me.validateActionsStatus(selected);
         }
     },
     loadTabsElements: function() {
@@ -61,7 +58,7 @@ Ext.define('Seleccion.controller.Seleccion', {
         var tabPanel = me.getTabpanel_main();
         var candidatos = Ext.create('Seleccion.view.seleccion.ListCandidatos', {
             closable: false,
-            disabled: true
+            // disabled: true
         });
         var preseleccion = Ext.create('Seleccion.view.seleccion.ListPreseleccion', {
             closable: false,
@@ -82,7 +79,7 @@ Ext.define('Seleccion.controller.Seleccion', {
         }
     },
     validateActionsStatus: function(row) {
-        this.getList_seleccion().down('button[action=status]').enable();
+        // this.getList_seleccion().down('button[action=status]').enable();
         Ext.getCmp('start_seleccion').setDisabled(true);
         Ext.getCmp('stop_seleccion').setDisabled(true);
         Ext.getCmp('end_seleccion').setDisabled(true);

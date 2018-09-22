@@ -1,7 +1,7 @@
 /* global Ext */
 Ext.application({
     requires: ['Ext.container.Viewport',
-        'Ext.grid.*', 'Ext.data.*',
+        'Ext.grid.*', 'Ext.data.*', 'Ext.layout.container.Border',
         'Ext.toolbar.Paging', 'Ext.ux.ProgressBarPager', 'Ext.ux.form.SearchField',
         'Ext.ModelManager', 'Ext.tip.QuickTipManager', 'Ext.form.*'],
     name: 'Seleccion',
