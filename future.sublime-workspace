@@ -1,0 +1,451 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"tr",
+				"true"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/maestros/sociocomercial/models/bussines/SociocomercialModel.php",
+			"settings":
+			{
+				"buffer_size": 9066,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\nclass Sociocomercial extends Doctrine_Record {\n\n    public function setUp() {\n        parent::setUp();\n        $this->hasOne('Sociocomercial', array('local' => 'idempresa', 'foreign' => 'id'));\n        $this->hasMany('Sociocomercial', array('local' => 'id', 'foreign' => 'idempresa'));\n        $this->hasMany('Contacto', array('local' => 'id', 'foreign' => 'idsociocomercial'));\n    }\n\n    public function setTableDefinition() {\n        $this->setTableName('comercial.nom_sociocomercial');\n        $this->hasColumn('id', 'numeric', 19, array('notnull' => false, 'primary' => true, 'sequence' => 'comercial.sociocomercial_id'));\n        $this->hasColumn('codigo', 'character varying', 30, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('abreviatura', 'character varying', 30, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('nombre', 'character varying', 255, array('notnull' => false, 'primary' => false));\n        $this->hasColumn('descripcion', 'character varying', 255, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('tipo', 'numeric', 1, array('notnull' => false, 'primary' => false));\n        $this->hasColumn('telefono', 'character varying', 255, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('idpais', 'numeric', 19, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('provincia', 'character varying', 50, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('direccion', 'character varying', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('codpostal', 'character varying', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('sitioweb', 'character varying', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('movil', 'character varying', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('fax', 'character varying', null, array('notnull' => true, 'primary' => false));\n       $this->hasColumn('idcuentacobrar', 'numeric', 19, array('notnull' => true, 'primary' => false));\n       $this->hasColumn('idcuentapagar', 'numeric', 19, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('creditoconcedido', 'numeric', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('idempresa', 'numeric', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('identidad', 'numeric', null, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('foto', 'character varying', null, array('notnull' => false, 'primary' => false));\n        $this->hasColumn('ci', 'character varying', 30, array('notnull' => true, 'primary' => false));\n        $this->hasColumn('email', 'character varying', 255, array('notnull' => false, 'primary' => false));\n        $this->hasColumn('isempresa', 'numeric', null, array('notnull' => true, 'primary' => false));\n    }\n\n    public function persist() {\n        try {\n//            $a = Doctrine_Manager::getInstance();\n//            $va = $a->getCurrentConnection();\n\n            $this->save();\n//\n//            $va->commit();\n//            $va->beginTransaction();\n\n            return $this->id;\n        } catch (Doctrine_Exception $e) {\n            throw $e;\n        }\n    }\n\n    static public function GetAll() {\n        try {\n            $query = Doctrine_Query::create();\n            $result = $query->from('Sociocomercial')->execute();\n\n            return $result->toArray();\n        } catch (Doctrine_Exception $e) {\n            return $e;\n        }\n    }\n\n    static public function GetByPage($offset, $limit, $toArray = FALSE) {\n        try {\n            $query = Doctrine_Query::create();\n            $result = $query->from('Sociocomercial')\n                    ->offset($offset)\n                    ->limit($limit)\n                    ->execute();\n\n            return $toArray ? $result->toArray() : $result;\n        } catch (Doctrine_Exception $e) {\n            return $e;\n        }\n    }\n\n    static public function GetById($idsociocomercial, $toArray = FALSE) {\n        try {\n            $result = Doctrine::getTable('Sociocomercial')->find($idsociocomercial);\n\n            return $toArray ? $result->toArray() : $result;\n        } catch (Doctrine_Exception $e) {\n            return $e;\n        }\n    }\n\n    static public function GetByIds($arrIds, $toArray = FALSE) {\n        try {\n            $query = Doctrine_Query::create();\n            $result = $query->from('Sociocomercial')\n                    ->whereIn('id', $arrIds)\n                    ->execute();\n\n            return $toArray ? $result->toArray() : $result;\n        } catch (Doctrine_Exception $e) {\n            return $e;\n        }\n    }\n\n    static public function GetByCondition($condition, $params, $toArray = FALSE) {\n        try {\n            $query = Doctrine_Query::create();\n            $result = $query->from('Sociocomercial')\n                    ->where(\"$condition\", $params)\n                    ->execute();\n\n            return $toArray ? $result->toArray() : $result;\n        } catch (Doctrine_Exception $e) {\n            return $e;\n        }\n    }\n\n    /**\n     * @param $conditions\n     * @return array\n     */\n    static public function GetByConditionSQL($conditions) {\n        $select = 'cp.*, (CASE WHEN cp.idempresa IS NOT NULL THEN\n\t                (SELECT e.nombre FROM comercial.nom_sociocomercial e WHERE cp.idempresa = e.id)\n\t                ELSE null END) as empresa'\n//                . ', (CASE WHEN cp.idcuentacobrar IS NOT NULL THEN\n//\t                (SELECT nc.concatcta ||\\' \\'|| nc.denominacion FROM mod_contabilidad.nom_cuenta nc WHERE nc.idcuenta = cp.idcuentacobrar)\n//\t                ELSE null END) as cuentacobrar'\n//                . ', (CASE WHEN cp.idcuentapagar IS NOT NULL THEN\n//\t                (SELECT nc1.concatcta ||\\' \\'|| nc1.denominacion FROM mod_contabilidad.nom_cuenta nc1 WHERE nc1.idcuenta = cp.idcuentapagar)\n//\t                ELSE null END) as cuentapagar'\n                . ', (CASE WHEN cp.idpais IS NOT NULL THEN\n\t                (SELECT np.pais ||\\' (\\'|| np.siglas ||\\')\\' FROM maestros.nom_pais np WHERE cp.idpais = np.idpais)\n\t                ELSE \\' \\' END) as pais';\n\n        try {\n            $objDoctrine = Doctrine_Manager::getInstance();\n            $connection = $objDoctrine->getCurrentConnection();\n            $data_return = $connection->fetchAll('SELECT ' . $select . ' FROM comercial.nom_sociocomercial cp '\n                    . \"WHERE $conditions ORDER BY cp.nombre ASC;\");\n        } catch (Doctrine_Exception $e) {\n            throw $e;\n        }\n\n        return $data_return;\n    }\n\n    static public function Erase($idsociocomercial) {\n        try {\n            $query = Doctrine_Query::create();\n            $rows_afected = $query->delete('Sociocomercial')\n                    ->where(\"id = $idsociocomercial\")\n                    ->execute();\n\n            return $rows_afected > 0;\n        } catch (Doctrine_Exception $e) {\n            throw $e;\n        }\n    }\n\n    static public function EraseSQL($idsociocomercial) {\n        try {\n            $objDoctrine = Doctrine_Manager::getInstance();\n            $connection = $objDoctrine->getCurrentConnection();\n            $connection->execute('DELETE FROM comercial.nom_sociocomercial WHERE id = ' . $idsociocomercial);\n            return TRUE;\n        } catch (Doctrine_Exception $e) {\n            if ($e->getCode() == 23503) {//Code for foreignKeyViolation\n                return -1;\n            } else {\n                return $e->getMessage();\n            }\n        }\n    }\n\n    static public function EraseByCondition($conditions, $params) {\n        try {\n            $query = Doctrine_Query::create();\n            $rows_afected = $query->delete('Sociocomercial')\n                    ->where(\"$conditions\", $params)\n                    ->execute();\n\n            return $rows_afected > 0;\n        } catch (Doctrine_Exception $e) {\n            return $e;\n        }\n    }\n\n    static public function EraseByConditionSQL($conditions) {\n        try {\n            $objDoctrine = Doctrine_Manager::getInstance();\n            $connection = $objDoctrine->getCurrentConnection();\n            $connection->execute('DELETE FROM comercial.nom_sociocomercial WHERE ' . $conditions);\n            return TRUE;\n        } catch (Doctrine_Exception $e) {\n            if ($e->getCode() == 23503) {//Code for foreignKeyViolation\n                return 0;\n            } else {\n                return $e->getMessage();\n            }\n        }\n    }\n\n}\n",
+			"file": "app/maestros/sociocomercial/models/domain/Sociocomercial.php",
+			"file_size": 8726,
+			"file_write_time": 131834209855261867,
+			"settings":
+			{
+				"buffer_size": 8610,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/maestros/sociocomercial/controllers/SociocomercialController.php",
+			"settings":
+			{
+				"buffer_size": 1440,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/maestros/sociocomercial/views/js/sociocomercial/app/view/Edit.js",
+			"settings":
+			{
+				"buffer_size": 88538,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/maestros/sociocomercial/views/js/sociocomercial/app/controller/ClientesProveedores.js",
+			"settings":
+			{
+				"buffer_size": 14274,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Migue/Proyectos/FUTURE",
+		"/C/Users/Migue/Proyectos/FUTURE/app",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/controllers",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/bussines",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/controller",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view",
+		"/C/Users/Migue/Proyectos/FUTURE/log",
+		"/C/Users/Migue/Proyectos/FUTURE/util",
+		"/C/Users/Migue/Proyectos/FUTURE/util/format"
+	],
+	"file_history":
+	[
+		"/C/Users/Migue/Proyectos/FUTURE/log/exceptions.log",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/controller/ClientesProveedores.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/lang/es/sociocomercial.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view/Edit.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view/Grid.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/model/Compania.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/model/mdClienteProv.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/appSociocomercial.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/models/domain/Cliente.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/controllers/SociocomercialController.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain/Sociocomercial.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain/Contacto.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/bussines/SociocomercialModel.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/views/js/cliente/cliente.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/views/lang/es/cliente.js",
+		"/C/Users/Migue/Proyectos/FUTURE/util/format/data_format.txt",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/parteprod/controllers/ParteprodController.php",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/reporte/models/domain/ReporteProd.php",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/parteprod/views/js/parteprod/parteprod.js",
+		"/C/Users/Migue/Desktop/Perdurit.txt",
+		"/C/Users/Migue/AppData/Local/Temp/Rar$DIa1200.28083/README.md",
+		"/C/Users/Migue/AppData/Local/Temp/Rar$DIa5916.8052/README.md",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/planentidad/models/domain/PlanEntidad.php",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/configuracion/entidades/controllers/EntidadesController.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"nombre",
+			"codigoidentificacion",
+			"idsociocomercial",
+			"savesociocomercial",
+			"saveSocioComercial",
+			"msgAddNoData",
+			"idsociocomercial",
+			"isempresa",
+			"lbAdicionarCliente",
+			"codigonit"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"codigo",
+			"id"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\FUTURE"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/maestros/sociocomercial/models/bussines/SociocomercialModel.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2044,
+								2044
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 661.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/maestros/sociocomercial/models/domain/Sociocomercial.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8610,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2195,
+								2195
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/maestros/sociocomercial/controllers/SociocomercialController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1440,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								709,
+								727
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/maestros/sociocomercial/views/js/sociocomercial/app/view/Edit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 88538,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72321,
+								72321
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/jQuery/Syntaxes/jQueryJavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1350.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/maestros/sociocomercial/views/js/sociocomercial/app/controller/ClientesProveedores.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13901,
+								13901
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/jQuery/Syntaxes/jQueryJavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4541.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"getentidades",
+				"app\\configuracion\\entidades\\controllers\\EntidadesController.php"
+			],
+			[
+				"getdashboard",
+				"app\\dashboard\\models\\domain\\generated\\BaseDashboard.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "getdas",
+		"selected_items":
+		[
+			[
+				"getdas",
+				"getDashboardConfig"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
