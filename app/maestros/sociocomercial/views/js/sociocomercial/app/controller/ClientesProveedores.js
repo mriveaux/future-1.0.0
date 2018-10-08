@@ -260,7 +260,7 @@ Ext.define('ClientesProveedores.controller.ClientesProveedores', {
             var deletedContacts = new Array();
             contabilidad.deletedAccounts = new Array();
             //Caso de modificar
-            if (!Ext.isEmpty(form.findField('idsociocomercial'))) {
+            if (!Ext.isEmpty(form.findField('id'))) {
                 Ext.each(tabContabilidad.down('grid_cuentabancaria').getStore().getRemovedRecords(), function (record) {
                     contabilidad.deletedAccounts.push(record.get('idcuentacliente'));
                 });

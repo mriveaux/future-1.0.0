@@ -23,6 +23,14 @@ No         		         N.\xBA						&#xBA				&#8470;			&#x2116;
 //Letras, numeros(a-zA-Z0-9,letras con tildes, ñ y caracteres especiales.,-+*/\%#&")
 maskRe: /^([a-zA-Z0-9\xf3\xf1\xe1\xe9\xed\xfa\xd1\xc1\xc9\xcd\xd3\xda\xfc\s\.\,\-\+\*\/\(\)\%\#\&\"]+?[a-zA-Z]*)+$/,
 regex: /^([a-zA-Z0-9\xf3\xf1\xe1\xe9\xed\xfa\xd1\xc1\xc9\xcd\xd3\xda\xfc\.\,\-\+\*\/\(\)\%\#\&\"]+(\s{1})?[a-zA-Z0-9\xf3\xf1\xe1\xe9\xed\xfa\xd1\xc1\xc9\xcd\xd3\xda\xfc\.\,\-\+\*\/\(\)\%\#\&\"]*)+$/,
+nextval('"comercial"."comercial_idcliente_seq"'::text::regclass)
+
+CREATE SEQUENCE comercial.cliente_idcliente_seq
+  INCREMENT 1 MINVALUE 1
+  MAXVALUE 9223372036854775807 START 1
+  CACHE 1;
+
+ALTER SEQUENCE comercial.cliente_idcliente_seq RESTART WITH 1;
 
 //Pattens HTML5
 //Passwd must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter

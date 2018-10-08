@@ -32,7 +32,7 @@ Ext.define('ClientesProveedores.view.Edit', {
                 },
                 items: [{
                         xtype: 'hidden',
-                        name: 'idsociocomercial'
+                        name: 'id'
                     }, {
                         xtype: 'container',
                         layout: {
@@ -74,6 +74,19 @@ Ext.define('ClientesProveedores.view.Edit', {
                                         defaultType: 'textfield',
                                         anchor: '100%',
                                         items: [{
+                                                flex: 3,
+                                                name: 'nombre',
+                                                fieldLabel: futureLang.lbNombre,
+                                                emptyText: futureLang.lbFullName,
+                                                maxLength: 255,
+                                                allowBlank: false
+                                            }]
+                                    }, {
+                                        xtype: 'fieldcontainer',
+                                        layout: 'hbox',
+                                        defaultType: 'textfield',
+                                        anchor: '100%',
+                                        items: [{
                                                 flex: 1,
                                                 name: 'codigo',
                                                 fieldLabel: futureLang.lbCodigo,
@@ -84,8 +97,8 @@ Ext.define('ClientesProveedores.view.Edit', {
                                             }, {
                                                 flex: 2,
                                                 name: 'nombre',
-                                                fieldLabel: futureLang.lbNombre,
-                                                emptyText: futureLang.lbFullName,
+                                                fieldLabel: futureLang.lbAbreviatura,
+                                                emptyText: futureLang.lbAbreviatura,
                                                 maxLength: 255,
                                                 allowBlank: false
                                             }]
@@ -98,17 +111,17 @@ Ext.define('ClientesProveedores.view.Edit', {
                                             name: 'tipo' //Each radio has the same name so the browser will make sure only one is checked at once
                                         },
                                         items: [{
-//                                                name: 'cliente',
+                                               name: 'cliente',
                                                 boxLabel: futureLang.lbEsCliente,
                                                 margin: '15 15 0 0',
                                                 inputValue: 1
                                             }, {
-//                                                name: 'proveedor',
+                                               name: 'proveedor',
                                                 boxLabel: futureLang.lbEsProveedor,
                                                 margin: '15 15 0 0',
                                                 inputValue: 2
                                             }, {
-//                                                name: 'empresa',
+                                               name: 'empresa',
                                                 boxLabel: futureLang.lbEsEmpresa,
                                                 margin: '15 15 0 0',
                                                 inputValue: 3

@@ -14,7 +14,7 @@ class Cliente extends Doctrine_Record {
         $this->hasColumn('nombre', 'character varying', 255, array('notnull' => true, 'primary' => false));
         $this->hasColumn('abreviatura', 'character varying', 30, array('notnull' => true, 'primary' => false));
         $this->hasColumn('codigoreeup', 'character varying', 50, array('notnull' => true, 'primary' => false));
-        $this->hasColumn('codigonit', 'character varying', 11, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('codigonit', 'character varying', 11, array('notnull' => false, 'primary' => false));
         $this->hasColumn('descripcion', 'character varying', 255, array('notnull' => false, 'primary' => false));
         $this->hasColumn('tipo', 'numeric', 1, array('notnull' => true, 'primary' => false));
         $this->hasColumn('tipopersona', 'numeric', 1, array('notnull' => true, 'primary' => false));
