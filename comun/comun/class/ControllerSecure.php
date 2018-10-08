@@ -65,7 +65,11 @@ class ControllerSecure {
     }
 
     private function seeRegistration() {
-        Doctrine_Manager::checkRegister();
+        try {
+            Doctrine_Manager::checkRegister();
+        } catch (Doctrine_Manager_Exception $e) {
+            throw $e;
+        }
     }
 
     /**
