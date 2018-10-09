@@ -2,12 +2,12 @@
 Ext.define('Noconformidad.view.List', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.noconformidadlist', selType: 'rowmodel',
-    initComponent: function() {
+    initComponent: function () {
         var grid = this;
         this.reNoconformidad = Ext.create('Ext.grid.plugin.RowEditing', {
             clicksToEdit: 2,
             listeners: {
-                canceledit: function(rowEditing, context) {
+                canceledit: function (rowEditing, context) {
                     if (context.record.phantom) {
                         grid.getStore().remove(context.record);
                     }
@@ -16,7 +16,7 @@ Ext.define('Noconformidad.view.List', {
                 beforeedit: function(editor, context, eOpts) {
                     grid.getDockedComponent('topbar').disable();
                 },
-                edit: function(editor, context, eOpts) {
+                edit: function (editor, context, eOpts) {
                     if (context.record.phantom) {
                         grid.getStore().remove(context.record);
                     }
@@ -29,14 +29,14 @@ Ext.define('Noconformidad.view.List', {
                     items: [{action: 'add', itemId: 'btnAdicionar', text: futureLang.lbAdd, tooltip: futureLang.lbAdd2, iconCls: 'fa fa-plus bluedark-button'},
                         {action: 'mod', itemId: 'btnModificar', text: futureLang.lbMod, tooltip: futureLang.lbMod2, iconCls: 'fa fa-edit bluedark-button', disabled: true},
                         {action: 'del', itemId: 'btnEliminar', text: futureLang.lbDel, tooltip: futureLang.lbDel2, iconCls: 'fa fa-trash bluedark-button', disabled: true},
-                        '->', {
+                        '-', '->', {
                             xtype: 'searchfield', store: 'Noconformidad',
-                            fnOnSearch: function() {
+                            fnOnSearch: function () {
                                 var store = Ext.data.StoreManager.lookup('Noconformidad');
                                 store.clearFilter(true);
                                 store.load({params: {criterio: Ext.getCmp('sfNoconformidad').getValue()}});
                             },
-                            fnOnClear: function() {
+                            fnOnClear: function () {
                                 var store = Ext.data.StoreManager.lookup('Noconformidad');
                                 store.load({params: {criterio: Ext.getCmp('sfNoconformidad').getValue()}});
                             }
@@ -63,7 +63,7 @@ Ext.define('Noconformidad.view.List', {
                             iconCls: 'fa fa-edit bluedark-button',
                             tooltip: futureLang.lbMod2,
                             scope: this,
-                            handler: function(grid2, rowIndex) {
+                            handler: function (grid2, rowIndex) {
                                 if (grid.getSelectionModel().hasSelection()) {
                                     var selection = grid.getSelectionModel().getSelection()[0];
                                     grid.reTipodpa.startEdit(selection, 0);
@@ -75,7 +75,7 @@ Ext.define('Noconformidad.view.List', {
                             iconCls: 'fa fa-trash bluedark-button',
                             tooltip: futureLang.lbDel2,
                             scope: this,
-                            handler: function(grid2, rowIndex) {
+                            handler: function (grid2, rowIndex) {
                                 if (grid.getSelectionModel().hasSelection()) {
                                     var selection = grid.getSelectionModel().getSelection()[0];
                                     var nombNoconformidad = selection.data.noconformidad;
@@ -99,7 +99,7 @@ Ext.define('Noconformidad.view.List', {
         });
         this.callParent(arguments);
     },
-    showStatus: function(value, record) {
+    showStatus: function (value, record) {
         var statusNc = '';
         switch (parseInt(value)) {
             case 1:
@@ -117,7 +117,7 @@ Ext.define('Noconformidad.view.List', {
         }
         return statusNc;
     },
-    showImage: function(value, record) {
+    showImage: function (value, record) {
         var imgSrc = '"data:image/png;base64,' + value + '"';
         return '<img src=' + imgSrc + ' style="width:200px">';
     }

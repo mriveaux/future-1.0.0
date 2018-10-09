@@ -5,7 +5,7 @@ Ext.define('Noconformidad.controller.Noconformidad', {
     models: ['Noconformidad'],
     views: ['List'],
     refs: [{ref: 'list', selector: 'grid'}],
-    init: function() {
+    init: function () {
         this.control({
             'noconformidadlist': {
                 selectionchange: this.toggleBtn
@@ -34,12 +34,12 @@ Ext.define('Noconformidad.controller.Noconformidad', {
     toggleDockedBar: function(store, records, successful, eOpts) {
         this.getList().getDockedComponent('topbar').enable();
     },
-    addNoconformidad: function() {
+    addNoconformidad: function () {
         var Terr = this.getModel('Noconformidad');
         this.getList().getStore().insert(0, new Terr());
         this.getList().reNoconformidad.startEdit(0, 0);
     },
-    editNoconformidad: function(grid, record) {
+    editNoconformidad: function (grid, record) {
         var me = this;
         if (me.getList().getSelectionModel().hasSelection()) {
             var selection = me.getList().getSelectionModel().getSelection()[0];
@@ -48,7 +48,7 @@ Ext.define('Noconformidad.controller.Noconformidad', {
             showMsg(0, futureLang.lbSelMod);
         }
     },
-    delNoconformidad: function(grid, record) {
+    delNoconformidad: function (grid, record) {
         var me = this;
         if (me.getList().getSelectionModel().hasSelection()) {
             var selection = me.getList().getSelectionModel().getSelection()[0];
@@ -65,7 +65,7 @@ Ext.define('Noconformidad.controller.Noconformidad', {
             showMsg(1, futureLang.lbSelDel);
         }
     },
-    updateNoconformidad: function(button) {
+    updateNoconformidad: function (button) {
         var win = button.up('window'),
                 form = win.down('form'),
                 record = form.getRecord(),
@@ -75,7 +75,7 @@ Ext.define('Noconformidad.controller.Noconformidad', {
         win.close();
         this.getNoconformidadStore().sync();
     },
-    toggleBtn: function(selModel, selections) {
+    toggleBtn: function (selModel, selections) {
         this.getList().down('#btnModificar').setDisabled(selections.length === 0);
         this.getList().down('#btnEliminar').setDisabled(selections.length === 0);
     }

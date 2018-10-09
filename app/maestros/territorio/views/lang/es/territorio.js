@@ -1,0 +1,20 @@
+var futureLang = {
+    lbAdd: 'Adicionar',
+    lbAdd2: 'Adicionar territorio',
+    lbMod: 'Modificar',
+    lbMod2: 'Modificar territorio',
+    lbDel: 'Eliminar',
+    lbDel2: 'Eliminar territorio',
+    lbNombre: 'Nombre',
+    lbAbreviatura: 'Abreviatura',
+    lbCodigo: 'C&oacute;digo',
+    lbAcciones: 'Acciones',
+    lbMsgConfirmar: String.fromCharCode(191) + 'Est\xE1 seguro que quiere eliminar el territorio <b>{0}</b>?',
+    lbAddOk: 'El territorio ha sido adicionado satisfactoriamente.',
+    lbModOk: 'El territorio ha sido modificado satisfactoriamente.',
+    lbDelOk: 'El territorio ha sido eliminado satisfactoriamente.',
+    lbSaving: 'Guardando...',
+    lbDeleting: 'Eliminando...',
+    lbSelMod: 'Debe seleccionar el territorio que quiere modificar.',
+    lbSelDel: 'Debe seleccionar el territorio que quiere eliminar.'
+};

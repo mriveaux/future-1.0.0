@@ -40,11 +40,14 @@ Ext.define('Directa.view.directa.ListSeleccion', {
             {
                 text: 'idselecciondirecta',
                 dataIndex: 'idselecciondirecta',
-                hidden: true
+                sortable: false,
+                hidden: true,
+                hiddeable: true
             }, {
                 text: 'Fecha',
                 dataIndex: 'fecha',
-                width: 100
+                width: 100,
+                renderer: Ext.util.Format.dateRenderer('d/m/Y')
             }, {
                 text: 'Usuario',
                 dataIndex: 'usuario',
