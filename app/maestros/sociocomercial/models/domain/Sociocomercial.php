@@ -4,34 +4,35 @@ class Sociocomercial extends Doctrine_Record {
 
     public function setUp() {
         parent::setUp();
-        $this->hasOne('Sociocomercial', array('local' => 'idempresa', 'foreign' => 'idsociocomercial'));
-        $this->hasMany('Sociocomercial', array('local' => 'idsociocomercial', 'foreign' => 'idempresa'));
-        $this->hasMany('Contacto', array('local' => 'idsociocomercial', 'foreign' => 'idsociocomercial'));
+        $this->hasOne('Sociocomercial', array('local' => 'idempresa', 'foreign' => 'id'));
+        $this->hasMany('Sociocomercial', array('local' => 'id', 'foreign' => 'idempresa'));
+        $this->hasMany('Contacto', array('local' => 'id', 'foreign' => 'idsociocomercial'));
     }
 
     public function setTableDefinition() {
         $this->setTableName('comercial.nom_sociocomercial');
-        $this->hasColumn('idsociocomercial', 'numeric', null, array('notnull' => false, 'primary' => true, 'sequence' => 'comercial.nom_sociocomercial_idsociocomercial'));
-        $this->hasColumn('codigo', 'character varying', null, array('notnull' => true, 'primary' => false));
-        $this->hasColumn('nombre', 'character varying', null, array('notnull' => false, 'primary' => false));
-        $this->hasColumn('descripcion', 'character varying', null, array('notnull' => true, 'primary' => false));
-        $this->hasColumn('tipo', 'numeric', null, array('notnull' => false, 'primary' => false));
-        $this->hasColumn('telefono', 'character varying', null, array('notnull' => true, 'primary' => false));
-        $this->hasColumn('idpais', 'numeric', null, array('notnull' => true, 'primary' => false));
-        $this->hasColumn('provincia', 'character varying', null, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('id', 'numeric', 19, array('notnull' => false, 'primary' => true, 'sequence' => 'comercial.sociocomercial_id'));
+        $this->hasColumn('codigo', 'character varying', 30, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('abreviatura', 'character varying', 30, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('nombre', 'character varying', 255, array('notnull' => false, 'primary' => false));
+        $this->hasColumn('descripcion', 'character varying', 255, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('tipo', 'numeric', 1, array('notnull' => false, 'primary' => false));
+        $this->hasColumn('telefono', 'character varying', 255, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('idpais', 'numeric', 19, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('provincia', 'character varying', 50, array('notnull' => true, 'primary' => false));
         $this->hasColumn('direccion', 'character varying', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('codpostal', 'character varying', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('sitioweb', 'character varying', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('movil', 'character varying', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('fax', 'character varying', null, array('notnull' => true, 'primary' => false));
-//        $this->hasColumn('idcuentacobrar', 'numeric', null, array('notnull' => true, 'primary' => false));
-//        $this->hasColumn('idcuentapagar', 'numeric', null, array('notnull' => true, 'primary' => false));
+       $this->hasColumn('idcuentacobrar', 'numeric', 19, array('notnull' => true, 'primary' => false));
+       $this->hasColumn('idcuentapagar', 'numeric', 19, array('notnull' => true, 'primary' => false));
         $this->hasColumn('creditoconcedido', 'numeric', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('idempresa', 'numeric', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('identidad', 'numeric', null, array('notnull' => true, 'primary' => false));
         $this->hasColumn('foto', 'character varying', null, array('notnull' => false, 'primary' => false));
-        $this->hasColumn('ci', 'character varying', null, array('notnull' => true, 'primary' => false));
-        $this->hasColumn('email', 'character varying', null, array('notnull' => false, 'primary' => false));
+        $this->hasColumn('ci', 'character varying', 30, array('notnull' => true, 'primary' => false));
+        $this->hasColumn('email', 'character varying', 255, array('notnull' => false, 'primary' => false));
         $this->hasColumn('isempresa', 'numeric', null, array('notnull' => true, 'primary' => false));
     }
 
@@ -45,7 +46,7 @@ class Sociocomercial extends Doctrine_Record {
 //            $va->commit();
 //            $va->beginTransaction();
 
-            return $this->idsociocomercial;
+            return $this->id;
         } catch (Doctrine_Exception $e) {
             throw $e;
         }
@@ -90,7 +91,7 @@ class Sociocomercial extends Doctrine_Record {
         try {
             $query = Doctrine_Query::create();
             $result = $query->from('Sociocomercial')
-                    ->whereIn('idsociocomercial', $arrIds)
+                    ->whereIn('id', $arrIds)
                     ->execute();
 
             return $toArray ? $result->toArray() : $result;
@@ -118,7 +119,7 @@ class Sociocomercial extends Doctrine_Record {
      */
     static public function GetByConditionSQL($conditions) {
         $select = 'cp.*, (CASE WHEN cp.idempresa IS NOT NULL THEN
-	                (SELECT e.nombre FROM comercial.nom_sociocomercial e WHERE cp.idempresa = e.idsociocomercial)
+	                (SELECT e.nombre FROM comercial.nom_sociocomercial e WHERE cp.idempresa = e.id)
 	                ELSE null END) as empresa'
 //                . ', (CASE WHEN cp.idcuentacobrar IS NOT NULL THEN
 //	                (SELECT nc.concatcta ||\' \'|| nc.denominacion FROM mod_contabilidad.nom_cuenta nc WHERE nc.idcuenta = cp.idcuentacobrar)
@@ -146,7 +147,7 @@ class Sociocomercial extends Doctrine_Record {
         try {
             $query = Doctrine_Query::create();
             $rows_afected = $query->delete('Sociocomercial')
-                    ->where("idsociocomercial = $idsociocomercial")
+                    ->where("id = $idsociocomercial")
                     ->execute();
 
             return $rows_afected > 0;
@@ -159,7 +160,7 @@ class Sociocomercial extends Doctrine_Record {
         try {
             $objDoctrine = Doctrine_Manager::getInstance();
             $connection = $objDoctrine->getCurrentConnection();
-            $connection->execute('DELETE FROM comercial.nom_sociocomercial WHERE idsociocomercial = ' . $idsociocomercial);
+            $connection->execute('DELETE FROM comercial.nom_sociocomercial WHERE id = ' . $idsociocomercial);
             return TRUE;
         } catch (Doctrine_Exception $e) {
             if ($e->getCode() == 23503) {//Code for foreignKeyViolation

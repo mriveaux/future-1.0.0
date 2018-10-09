@@ -2,7 +2,7 @@
 Ext.define('ClientesProveedores.model.mdClienteProv', {
     extend: 'Ext.data.Model',
     fields: [
-        {name: 'idclientesproveedores', type: 'int'},
+        {name: 'id', type: 'int'},
         {name: 'codigo', type: 'string'},
         {name: 'nombre', type: 'string'},
         {name: 'tipo', type: 'int'},

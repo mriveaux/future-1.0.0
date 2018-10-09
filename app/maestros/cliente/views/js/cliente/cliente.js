@@ -335,7 +335,7 @@ Ext.onReady(function () {
             minLength: 11,
             maskRe: /[\d\.]/i,
             regex: /^[\d\.]{11}$/,
-            allowBlank: false
+            allowBlank: true
         });
         var tfAbreviatura = new Ext.form.TextField({
             id: 'tfAbreviatura',

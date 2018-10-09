@@ -1,0 +1,441 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"tr",
+				"true"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "comun/comun/class/ControllerSecure.php",
+			"settings":
+			{
+				"buffer_size": 12148,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/index/views/scripts/index/index.phtml",
+			"settings":
+			{
+				"buffer_size": 4609,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "composer.json",
+			"settings":
+			{
+				"buffer_size": 420,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Migue/Proyectos/PATRIMONIO/composer.json",
+			"settings":
+			{
+				"buffer_size": 2454,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Migue/Proyectos/PATRIMONIO/app/AppKernel.php",
+			"settings":
+			{
+				"buffer_size": 1608,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Migue/Proyectos/PATRIMONIO",
+		"/C/Users/Migue/Proyectos/PATRIMONIO/app",
+		"/C/Users/Migue/Proyectos/PATRIMONIO/src"
+	],
+	"file_history":
+	[
+		"/C/Users/Migue/Proyectos/FUTURE/log/error.log",
+		"/C/Users/Migue/Proyectos/FUTURE/.gitignore",
+		"/C/Users/Migue/Proyectos/FUTURE/vendor/autoload.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/controllers/SociocomercialController.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/controller/ClientesProveedores.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view/Edit.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain/Sociocomercial.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/bussines/SociocomercialModel.php",
+		"/C/Users/Migue/Proyectos/FUTURE/comun/comun/class/GlobalSecure.php",
+		"/C/Users/Migue/Proyectos/FUTURE/log/exceptions.log",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/lang/es/sociocomercial.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view/Grid.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/model/Compania.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/model/mdClienteProv.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/appSociocomercial.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/models/domain/Cliente.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain/Contacto.php",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/views/js/cliente/cliente.js",
+		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/views/lang/es/cliente.js",
+		"/C/Users/Migue/Proyectos/FUTURE/util/format/data_format.txt",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/parteprod/controllers/ParteprodController.php",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/reporte/models/domain/ReporteProd.php",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/parteprod/views/js/parteprod/parteprod.js",
+		"/C/Users/Migue/Desktop/Perdurit.txt",
+		"/C/Users/Migue/AppData/Local/Temp/Rar$DIa1200.28083/README.md",
+		"/C/Users/Migue/AppData/Local/Temp/Rar$DIa5916.8052/README.md",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/planentidad/models/domain/PlanEntidad.php",
+		"/C/Users/Migue/Proyectos/PERDURIT/app/configuracion/entidades/controllers/EntidadesController.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"nombre",
+			"codigoidentificacion",
+			"idsociocomercial",
+			"savesociocomercial",
+			"saveSocioComercial",
+			"msgAddNoData",
+			"idsociocomercial",
+			"isempresa",
+			"lbAdicionarCliente",
+			"codigonit"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"codigo",
+			"id"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\FUTURE"
+		},
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\PATRIMONIO"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "comun/comun/class/ControllerSecure.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2011,
+								2011
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 465.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/index/views/scripts/index/index.phtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4571,
+								4571
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "composer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								320,
+								320
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Migue/Proyectos/PATRIMONIO/composer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								286,
+								169
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Migue/Proyectos/PATRIMONIO/app/AppKernel.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"getentidades",
+				"app\\configuracion\\entidades\\controllers\\EntidadesController.php"
+			],
+			[
+				"getdashboard",
+				"app\\dashboard\\models\\domain\\generated\\BaseDashboard.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "getdas",
+		"selected_items":
+		[
+			[
+				"getdas",
+				"getDashboardConfig"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -19,7 +19,7 @@ class SociocomercialModel extends ModelSecure {
             if (count($result)) {
                 foreach ($result as &$clienteprov) {
                     $clienteprov['contactos'] = ($clienteprov['isempresa'] == 1) ?
-                            Contacto::GetByCondition('idclientesprovedores = ?', array($clienteprov['idsociocomercial']), TRUE) : array();
+                            Contacto::GetByCondition('idclientesprovedores = ?', array($clienteprov['id']), TRUE) : array();
                     if (!empty($result['filter'])) {
                         $clienteprov['nombre'] = str_replace(strtr($filter, $utf8), "<span style=\"background-color: rgb(255, 255, 0);\">" . strtr($filter, $utf8) . "</span>", strtr($clienteprov['nombre'], $utf8));
                         $clienteprov['descripcion'] = str_replace(strtr($filter, $utf8), "<span style=\"background-color: rgb(255, 255, 0);\">" . strtr($filter, $utf8) . "</span>", strtr($clienteprov['descripcion'], $utf8));
@@ -36,12 +36,14 @@ class SociocomercialModel extends ModelSecure {
     public function saveSocioComercial($data) {
         try {
             $response = array('errors' => array(), 'success' => array());
-            if (!empty($data->nombre) && !empty($data->codigoidentificacion) && (!empty($data->cliente) || !empty($data->proveedor))) {
+            print_r("<pre><br/>");
+            print_r($data);die;
+            if (!empty($data->nombre) && !empty($data->codigo) && (!empty($data->cliente) || !empty($data->proveedor))) {
                 $flagmodify = FALSE;
                 $estructura = $this->dataSession->identidad;
-                if (!empty($data->idsociocomercial) && is_numeric($data->idsociocomercial)) {
+                if (!empty($data->id) && is_numeric($data->id)) {
                     /* Si se esta modificando */
-                    $objeto = Sociocomercial::GetById($data->idsociocomercial);
+                    $objeto = Sociocomercial::GetById($data->id);
                     $flagmodify = TRUE;
                 } else {
                     $objeto = new Sociocomercial();
@@ -53,7 +55,7 @@ class SociocomercialModel extends ModelSecure {
                     if ($alreadyExist) {
                         /* Ya existe el cliente o proveedor */
                         $response['success'] = FALSE;
-                        $response['errors'][] = array('code' => 'CP01', 'ci' => $data->codigoidentificacion);
+                        $response['errors'][] = array('code' => 'CP01', 'ci' => $data->codigo);
                         return $response;
                     }
                 } else {
@@ -75,8 +77,8 @@ class SociocomercialModel extends ModelSecure {
                 }
                 $objeto->nombre = $data->nombre;
                 $objeto->tipo = $tipo;
-                $objeto->ci = $data->codigoidentificacion;
-                $objeto->codigo = $data->codigoidentificacion;
+                $objeto->ci = $data->codigo;
+                $objeto->codigo = $data->codigo;
                 $objeto->descripcion = !empty($data->descripcion) ? $data->descripcion : NULL;
                 $objeto->telefono = !empty($data->telefono) ? $data->telefono : NULL;
                 $objeto->idpais = !empty($data->idpais) ? $data->idpais : NULL;
@@ -93,18 +95,18 @@ class SociocomercialModel extends ModelSecure {
                 $objeto->isempresa = !empty($data->empresa) ? 1 : NULL;
                 $objeto->identidad = $estructura;
                 $objeto->foto = !empty($data->foto) ? $data->foto : NULL;
-                $idsociocomercial = $objeto->persist();
-                if (!is_numeric($idsociocomercial)) {
+                $id = $objeto->persist();
+                if (!is_numeric($id)) {
                     /* Ocurrio un error al insertar el cliente o proveedor */
                     return array('success' => false, code => 3, 'message' => 'futureLang.msgAddFAIL');
                 } else {
                     /* agregando las cuentas bancarias */
                     if (!empty($dataCont->modifiedAccounts)) {
-                        $resBA = $this->addBankAccount($dataCont->modifiedAccounts, $idsociocomercial);
+                        $resBA = $this->addBankAccount($dataCont->modifiedAccounts, $id);
                         $response['errors'] = array_merge($response['errors'], $resBA['errors']);
                     }
                     if (!empty($data->empresa) && !empty($dataContacto->modifiedContacts)) {
-                        $res = $this->addContacts($dataContacto->modifiedContacts, $idsociocomercial);
+                        $res = $this->addContacts($dataContacto->modifiedContacts, $id);
                         $response['errors'] = array_merge($response['errors'], $res['errors']);
                     }
                     if ($tipo == 1) {
@@ -129,7 +131,7 @@ class SociocomercialModel extends ModelSecure {
 
     public function modSocioComercial($data) {
         try {
-            $sociocomercial = Doctrine_Core::getTable('Sociocomercial')->find($data->idsociocomercial);
+            $sociocomercial = Doctrine_Core::getTable('Sociocomercial')->find($data->id);
             $sociocomercial->sociocomercial = $data->sociocomercial;
             $sociocomercial->save();
             return 1;
@@ -165,7 +167,7 @@ class SociocomercialModel extends ModelSecure {
                 $params = array($entidad, $data->codigo, $data->nombre);
             } else {
                 $condition = 'identidad = ? AND (codigo = ? OR ci = ?)';
-                $params = array($entidad, $data->codigoidentificacion, $data->codigoidentificacion);
+                $params = array($entidad, $data->codigo, $data->codigo);
             }
             $check = Sociocomercial::GetByCondition($condition, $params, TRUE);
             return (count($check) > 0) ? TRUE : FALSE;

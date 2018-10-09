@@ -1,8 +1,9 @@
 /.vscode/**
 /nbproject/**
 /.idea/**
-/log/**
+!/log/**
 /*.log/
 /util/**
 /util/doc/*
 /util/format/*
+/vendor/
