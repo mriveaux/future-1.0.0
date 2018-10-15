@@ -20,46 +20,58 @@
 	"buffers":
 	[
 		{
-			"file": "comun/comun/class/ControllerSecure.php",
+			"file": "/C/wamp64/bin/apache/apache2.4.33/conf/extra/httpd-vhosts.conf",
 			"settings":
 			{
-				"buffer_size": 12148,
+				"buffer_size": 3362,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/index/views/scripts/index/index.phtml",
+			"file": "/C/wamp64/bin/apache/apache2.4.33/conf/httpd.conf",
 			"settings":
 			{
-				"buffer_size": 4609,
+				"buffer_size": 21001,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "composer.json",
+			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 420,
+				"buffer_size": 98,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Listen 5900\n#NameVirtualHost localhost:5900\n <VirtualHost *:5900>\n     DocumentRoot \"D:/Repos/Saue/web\"\n     ServerName localhost\n     <Directory  \"D:/Repos/Saue/\">\n        AllowOverride All\n \t\tRequire local\n     </Directory>\n </VirtualHost>\n \n \n ======================ALIAS=====================\n Alias /ecotec \"d:/Repos/Saue/web/saml/www\"\n\n<Directory \"d:/Repos/Saue/web/saml/www\">\n    Options Indexes FollowSymLinks\n    AllowOverride all    \n  <IfDefine APACHE24>\n    Require all granted\n  </IfDefine>\n  <IfDefine !APACHE24>\n    Order Deny,Allow\n\t  Deny from all\n\t  Allow from localhost ::1 127.0.0.1 localhost:5900\n\t</IfDefine>\n</Directory>",
+			"file": "/C/Users/Migue/Proyectos/SAUE/Ecotec app/vhost.txt",
+			"file_size": 668,
+			"file_write_time": 131334711560000000,
+			"settings":
+			{
+				"buffer_size": 642,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/wamp64/bin/apache/apache2.4.33/conf/extra/httpd-ssl.conf",
+			"settings":
+			{
+				"buffer_size": 5611,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Migue/Proyectos/PATRIMONIO/composer.json",
+			"contents": "Description: [E:]Dispositivo de almacenamiento USB(SMI USB MEMORY BAR)\nDevice Type:  Mass Storage Device\n\nProtocal Version: USB 2.10 <- Hint: This device can run faster when plugged to a USB3.0 port\nCurrent Speed: High Speed\nMax Current: 500mA\n\nUSB Device ID: VID = 090C PID = 3267\n\nDevice Vendor: Silicon Motion,Inc.\nDevice Name: SM3267AB MEMORY BAR\nDevice Revision: 0100\n\nManufacturer: SMI\nProduct Model: USB MEMORY BAR\nProduct Revision: 1000\n\nController Vendor: SMI\nController Part-Number: SM3267AE - ISP NONE\n\nTools on web: http://dl.mydigit.net/special/up/smi.html\n\n_______________________________________________________________\n\nVolume: E:\nController: Silicon Motion SM3267 AE\nPossible Memory Chip(s): Not available\nFlash ID: 454C98A3 7651\nFlash CE: 1\nChip F/W: ISP 160510-1AE\nMPTOOL Ver.: 16.05.12\nVID: 125F\nPID: DB8A\nManufacturer: ADATA\nProduct: ADATA USB Flash Drive\nQuery Vendor ID: ADATA   \nQuery Product ID: USB Flash Drive \nQuery Product Revision: 1100\nPhysical Disk Capacity: 15518924800 Bytes\nWindows Disk Capacity:  15502090240 Bytes\nInternal Tags: 8V2R-TZ2L\nFile System: FAT32\nRelative Offset: 56 KB\nUSB Version: 3.00 in 2.00 port\nDeclared Power: 500 mA\nContMeas ID: D611-01-FF\nMicrosoft Windows 10 x64 Build 17134\n------------------------------------\nhttp://www.antspec.com/usbflashinfo/\nProgram Version: 9.0.0.612\n\n",
 			"settings":
 			{
-				"buffer_size": 2454,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Migue/Proyectos/PATRIMONIO/app/AppKernel.php",
-			"settings":
-			{
-				"buffer_size": 1608,
-				"line_ending": "Unix"
+				"buffer_size": 1335,
+				"line_ending": "Windows",
+				"name": "Description: [E:]Dispositivo de almacenamiento USB"
 			}
 		}
 	],
@@ -95,44 +107,21 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Migue/Proyectos/PATRIMONIO",
-		"/C/Users/Migue/Proyectos/PATRIMONIO/app",
-		"/C/Users/Migue/Proyectos/PATRIMONIO/src"
 	],
 	"file_history":
 	[
 		"/C/Users/Migue/Proyectos/FUTURE/log/error.log",
-		"/C/Users/Migue/Proyectos/FUTURE/.gitignore",
-		"/C/Users/Migue/Proyectos/FUTURE/vendor/autoload.php",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/controllers/SociocomercialController.php",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/controller/ClientesProveedores.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view/Edit.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain/Sociocomercial.php",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/bussines/SociocomercialModel.php",
-		"/C/Users/Migue/Proyectos/FUTURE/comun/comun/class/GlobalSecure.php",
-		"/C/Users/Migue/Proyectos/FUTURE/log/exceptions.log",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/lang/es/sociocomercial.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/view/Grid.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/model/Compania.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/app/model/mdClienteProv.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/views/js/sociocomercial/appSociocomercial.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/models/domain/Cliente.php",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/sociocomercial/models/domain/Contacto.php",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/views/js/cliente/cliente.js",
-		"/C/Users/Migue/Proyectos/FUTURE/app/maestros/cliente/views/lang/es/cliente.js",
-		"/C/Users/Migue/Proyectos/FUTURE/util/format/data_format.txt",
-		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/parteprod/controllers/ParteprodController.php",
-		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/reporte/models/domain/ReporteProd.php",
-		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/parteprod/views/js/parteprod/parteprod.js",
-		"/C/Users/Migue/Desktop/Perdurit.txt",
-		"/C/Users/Migue/AppData/Local/Temp/Rar$DIa1200.28083/README.md",
-		"/C/Users/Migue/AppData/Local/Temp/Rar$DIa5916.8052/README.md",
-		"/C/Users/Migue/Proyectos/PERDURIT/app/produccion/planentidad/models/domain/PlanEntidad.php",
-		"/C/Users/Migue/Proyectos/PERDURIT/app/configuracion/entidades/controllers/EntidadesController.php"
+		"/C/Users/Migue/Proyectos/SAUE/Ecotec app/readme.txt",
+		"/C/Users/Migue/Proyectos/PERDURIT/.gitignore",
+		"/C/Users/Migue/Proyectos/FUTURE3/.env",
+		"/C/Users/Migue/Proyectos/PERDURIT/log/error.log",
+		"/C/wamp64/logs/php_error.log",
+		"/C/wamp64/bin/apache/apache2.4.33/conf/extra/httpd-vhosts.conf",
+		"/C/wamp64/bin/apache/apache2.4.33/conf/extra/httpd-ssl.conf"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 75.0
 	},
 	"find_in_files":
 	{
@@ -147,6 +136,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"10.58.15.63:5901",
+			"\nListen 0.0.0.0:80\nListen [::0]:80",
+			"Listen",
+			"socache_shmcb_module modules/mod_socache_shmcb.so",
+			"conf/extra/httpd-ssl.conf",
+			"ssl_module modules/mod_ssl.so",
+			"D:/WAMPSERVER/bin/apache/apache2.4.27",
 			"nombre",
 			"codigoidentificacion",
 			"idsociocomercial",
@@ -164,6 +160,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"C:/wamp64/bin/apache/apache2.4.33",
 			"codigo",
 			"id"
 		],
@@ -180,143 +177,93 @@
 		},
 		{
 			"path": "C:\\Users\\Migue\\Proyectos\\PATRIMONIO"
+		},
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\PERDURIT"
+		},
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\TAXIRUTERO2"
+		},
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\FUTURE3"
+		},
+		{
+			"path": "C:\\Users\\Migue\\Proyectos\\SAUE"
 		}
 	],
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "comun/comun/class/ControllerSecure.php",
+					"file": "/C/wamp64/bin/apache/apache2.4.33/conf/extra/httpd-vhosts.conf",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12148,
+						"buffer_size": 3362,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2011,
-								2011
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 465.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/index/views/scripts/index/index.phtml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4609,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4571,
-								4571
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "composer.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 420,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								320,
-								320
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Migue/Proyectos/PATRIMONIO/composer.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2454,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								286,
-								169
+								2961,
+								2961
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": false,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1251.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/wamp64/bin/apache/apache2.4.33/conf/httpd.conf",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2866,
+								2866
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 933.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/C/Users/Migue/Proyectos/PATRIMONIO/app/AppKernel.php",
+					"buffer": 2,
+					"file": ".gitignore",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1608,
+						"buffer_size": 98,
 						"regions":
 						{
 						},
@@ -329,16 +276,105 @@
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Migue/Proyectos/SAUE/Ecotec app/vhost.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								642,
+								341
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/wamp64/bin/apache/apache2.4.33/conf/extra/httpd-ssl.conf",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5611,
+								5611
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2227.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1334,
+								1334
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Description: [E:]Dispositivo de almacenamiento USB",
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -350,7 +386,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 39.0
 	},
 	"layout":
 	{
@@ -433,7 +469,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 287.0,
+	"side_bar_width": 219.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

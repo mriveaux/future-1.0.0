@@ -1,0 +1,21 @@
+{
+  "name": "future-framework",
+  "version": "2.0.0",
+  "description": "Future Framework version 2.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "F:\\\\PROGRAMAS\\\\DEVELOPMENT\\\\PORTAFOLIO\\\\PROJECTS\\\\SERVER\\\\FUTURE.git"
+  },
+  "author": "Miguel Díaz Riveaux",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

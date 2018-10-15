@@ -1,10 +1,14 @@
 <?php
 
-class IndexController extends ControllerSecure {
+
+
+class IndexController extends ControllerSecure
+{
 
     private $indexModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct(FALSE);
         $this->_integrator->setModels('seguridad', 'Roles');
         $this->_integrator->setModels('seguridad', 'Gruporoles');
@@ -15,31 +19,38 @@ class IndexController extends ControllerSecure {
         $this->indexModel = new IndexModel();
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
         $this->render('index');
     }
 
-    public function expiredAction() {
+    public function expiredAction()
+    {
         $this->render('expired');
     }
 
-    public function reindexAction() {
+    public function reindexAction()
+    {
         $this->render('reindex');
     }
 
-    public function futureauthservice_loggin_Action() {
+    public function futureauthservice_loggin_Action()
+    {
         echo json_encode($this->indexModel->futureAuthUser($this->dataPost, $this->dataSession->authToken));
     }
 
-    public function futureauthgobackAction() {
+    public function futureauthgobackAction()
+    {
         echo json_encode($this->indexModel->goBack());
     }
 
-    public function futureauthloadentitiesAction() {
+    public function futureauthloadentitiesAction()
+    {
         echo json_encode($this->indexModel->loadEntities());
     }
 
-    public function futureauthsetentityAction() {
+    public function futureauthsetentityAction()
+    {
         $exec = $this->indexModel->setEntityData($this->dataPost);
         echo json_encode(array("success" => $exec, "workspace" => $this->workspace));
     }

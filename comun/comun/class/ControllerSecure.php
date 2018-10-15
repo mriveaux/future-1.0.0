@@ -31,6 +31,12 @@ class ControllerSecure {
     protected $futureToken;
     protected $uiValidator;
 
+    /**
+     * ControllerSecure constructor.
+     * @param null $check
+     * @param bool $run
+     * @throws Exception
+     */
     public function __construct($check = null, $run = false) {
         try {
             $this->dataPost = Future_Post::getInstance();
@@ -64,6 +70,9 @@ class ControllerSecure {
         return $this->dataPost->getRequest($var);
     }
 
+    /**
+     * @throws Doctrine_Manager_Exception
+     */
     private function seeRegistration() {
         try {
             Doctrine_Manager::checkRegister();

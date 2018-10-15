@@ -13,6 +13,13 @@
             "email": "mdriveaux2015@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "nesbot/carbon": "^2.3",
+        "maximebf/debugbar": "^1.15",
+        "mpdf/mpdf": "^7.1",
+        "phpmailer/phpmailer": "^6.0",
+        "twbs/bootstrap": "^4.1",
+        "phpoffice/phpspreadsheet": "^1.4"
+    },
     "require-dev": {}
 }
