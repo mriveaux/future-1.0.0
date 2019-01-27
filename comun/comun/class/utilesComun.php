@@ -6,6 +6,10 @@ class utilesComun {
         
     }
 
+    /**
+     * @param $dir
+     * @throws Exception
+     */
     public function includeModulos($dir) {
         try {
             $dir = str_replace('//', '/', $dir);
@@ -21,6 +25,10 @@ class utilesComun {
         }
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public function getUrl() {
         try {
             $s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on") ? "s" : "";
@@ -32,6 +40,12 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $s1
+     * @param $s2
+     * @return bool|string
+     * @throws Exception
+     */
     public function strleft($s1, $s2) {
         try {
             return substr($s1, 0, strpos($s1, $s2));
@@ -40,11 +54,14 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $archivo
+     * @return array
+     * @throws Exception
+     */
     public function xmlReader($archivo) {
         try {
-            $xmlArray = array();
             if (file_exists($archivo)) {
-
                 $xml = @simplexml_load_file($archivo);
                 if ($xml) {
                     $xmlObj = new XmlToArray($xml->asXML());
@@ -62,6 +79,7 @@ class utilesComun {
      * @param array $arrayXml
      * @param SimpleXMLElement $simpleXml
      * @return SimpleXMLElement SimpleXMLElement
+     * @throws Exception
      */
     public function xmlWriter(array $arrayXml, SimpleXMLElement $simpleXml, $filePath = NULL) {
         try {
@@ -74,11 +92,17 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $conect
+     * @return Doctrine_Connection
+     * @throws Exception
+     */
     public function conexionDoctrineDB($conect) {
         try {
             spl_autoload_register(array('Doctrine', 'autoload'));
 //            if (Doctrine_Manager::beforeConnection($this->getParamsConecction())) {
-            $pass = $this->decript($conect['password']);
+            //$pass = $this->decript($conect['password']);
+//            print_r($pass);die;
             $conn = Doctrine_Manager::connection($conect['driver'] . '://' . $conect['usuario'] . ':' .
                             $pass . '@' . $conect['host'] . ':' . $conect['port'] . '/' . $conect['db']);
             return $conn;
@@ -88,6 +112,11 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $argCxn
+     * @return Doctrine_Connection
+     * @throws Exception
+     */
     public function testConexionDoctrineDB($argCxn) {
         try {
             if (!isset($argCxn->driver)) {
@@ -104,6 +133,11 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $dir_modelos
+     * @param string $model
+     * @throws Exception
+     */
     public function cargarModelos($dir_modelos, $model = 'models') {
         try {
             spl_autoload_register(array('Doctrine', 'autoload'));
@@ -115,6 +149,12 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $key
+     * @param array $array
+     * @return array
+     * @throws Exception
+     */
     public function obtenerArray($key, $array = array()) {
         try {
             $result = array();
@@ -127,6 +167,11 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $encoded_pass
+     * @return string
+     * @throws Exception
+     */
     function decript($encoded_pass) {
         try {
             $RSA = new RSA();
@@ -138,6 +183,11 @@ class utilesComun {
         }
     }
 
+    /**
+     * @param $plainText
+     * @return string
+     * @throws Exception
+     */
     function encriptSecret($plainText) {
         try {
             $RSA = new RSA();
@@ -149,6 +199,10 @@ class utilesComun {
         }
     }
 
+    /**
+     * @return array
+     * @throws Exception
+     */
     private function getParamsConecction() {
         try {
             $RSA = new RSA();
@@ -161,6 +215,9 @@ class utilesComun {
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function writeSecret() {
         try {
             $RSA = new RSA();
@@ -170,6 +227,9 @@ class utilesComun {
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function rewriteSecret() {
         try {
             $RSA = new RSA();
@@ -191,6 +251,10 @@ class utilesComun {
         rmdir($carpeta);
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public function getGuid() {
         try {
             if (function_exists('com_create_guid')) {
