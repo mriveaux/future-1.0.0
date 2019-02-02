@@ -7,7 +7,7 @@
     left:35%;
     top:10px;
     width:350px;
-    z-index:20000;
+    z-index:9999999;
 }
 #msg-warn {
     position:absolute;
@@ -15,7 +15,7 @@
     top:10px;
     width:400px;
     margin-left:-2%;
-    z-index:20000;
+    z-index:9999999;
 }
 #msg-info {
     position:absolute;
@@ -23,7 +23,7 @@
     top:10px;
     width:400px;
     margin-left:-2%;
-    z-index:20000;
+    z-index:9999999;
 }
 #msg-quest {
     position:absolute;
@@ -31,7 +31,7 @@
     top:10px;
     width:400px;
     margin-left:-2%;
-    z-index:20000;
+    z-index:9999999;
 }
 #msg-error {
     position:absolute;
@@ -39,7 +39,7 @@
     top:10px;
     width:400px;
     margin-left:-2%;
-    z-index:20000;
+    z-index:9999999;
 }
 #msg-div .msg {
     border-radius: 8px;
