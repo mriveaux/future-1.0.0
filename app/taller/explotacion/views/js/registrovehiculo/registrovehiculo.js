@@ -299,7 +299,7 @@ Ext.onReady(function() {
 // GridPanel registro
     var gpregistro = new Ext.grid.GridPanel({
         id: 'gpregistro',
-        title: 'Registro de ve&iacute;culos',
+        title: 'Registro de veh&iacute;culos',
         store: stregistro,
         autoExpandColumn: 'observaciones',
         sm: smregistro,

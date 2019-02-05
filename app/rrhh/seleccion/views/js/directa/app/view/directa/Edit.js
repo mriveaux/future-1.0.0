@@ -76,10 +76,31 @@ Ext.define('Directa.view.directa.Edit', {
                                             {
                                                 name: 'nombre',
                                                 fieldLabel: 'Nombre y apellidos',
-                                                flex: 1,
+                                                flex: 2,
                                                 maxLength: 255,
                                                 margins: '0 5 0 0',
                                                 allowBlank: false
+                                            },
+
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'fieldcontainer',
+                                        layout: 'hbox',
+                                        defaultType: 'textfield',
+                                        anchor: '100%',
+                                        items: [
+                                            {
+                                                name: 'area',
+                                                fieldLabel: '&Aacute;rea',
+                                                flex: 1,
+                                                xtype: 'combobox',
+                                                maxLength: 255,
+                                                margins: '0 5 0 0',
+                                                allowBlank: false,
+                                                typeAhead: true,
+                                                queryMode: 'local',
+                                                store: 'Area'
                                             },
                                             {
                                                 flex: 1,
@@ -137,22 +158,22 @@ Ext.define('Directa.view.directa.Edit', {
                                                 fieldLabel: 'Hasta'
                                             }
                                         ]
-                                    }, {
-                                        xtype: 'fieldcontainer',
-                                        layout: 'hbox',
-                                        defaultType: 'textfield',
-                                        anchor: '100%',
-                                        items: [
-                                            {
-                                                name: 'observacion',
-                                                fieldLabel: 'Observaci&oacute;n',
-                                                flex: 1,
-                                                maxLength: 255,
-                                                allowBlank: false
-                                            }
-                                        ]
                                     }
                                 ]
+                            }
+                        ]
+                    }, {
+                        xtype: 'fieldcontainer',
+                        layout: 'hbox',
+                        defaultType: 'textarea',
+                        anchor: '100%',
+                        items: [
+                            {
+                                name: 'observacion',
+                                fieldLabel: 'Observaci&oacute;n',
+                                flex: 1,
+                                maxLength: 255,
+                                allowBlank: false
                             }
                         ]
                     }

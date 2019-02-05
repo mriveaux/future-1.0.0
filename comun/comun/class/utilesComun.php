@@ -79,6 +79,7 @@ class utilesComun {
             spl_autoload_register(array('Doctrine', 'autoload'));
 //            if (Doctrine_Manager::beforeConnection($this->getParamsConecction())) {
             $pass = $this->decript($conect['password']);
+            //print_r($pass);die;
             $conn = Doctrine_Manager::connection($conect['driver'] . '://' . $conect['usuario'] . ':' .
                             $pass . '@' . $conect['host'] . ':' . $conect['port'] . '/' . $conect['db']);
             return $conn;

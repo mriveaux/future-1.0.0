@@ -124,6 +124,20 @@ class Future_Rest {
             return $this->_dataRequest->{$name};
         } elseif (isset($this->_extraRequest->{$name})) {
             return $this->_extraRequest->{$name};
+        }else{
+            return $this->getDataRequest($name);
+        }
+    }
+
+    public function get($name) {
+        if (null === $name) {
+            return $this->_dataRequest;
+        } elseif (isset($this->_dataRequest->{$name})) {
+            return $this->_dataRequest->{$name};
+        } elseif (isset($this->_extraRequest->{$name})) {
+            return $this->_extraRequest->{$name};
+        }else{
+            return $this->getDataRequest($name);
         }
     }
 

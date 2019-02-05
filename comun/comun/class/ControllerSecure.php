@@ -60,7 +60,7 @@ class ControllerSecure {
 
     public function render($var) {
         $ds = DIRECTORY_SEPARATOR;
-        if ($var != 'index') {
+        if ($var != 'index' && $var != 'install') {
             $this->dataSession->arrUiValidations = $this->getuivalidations();
         }
         require_once($this->request('vista') . $ds . 'views' . $ds . 'scripts' . $ds . $var . $ds . $var . '.phtml');

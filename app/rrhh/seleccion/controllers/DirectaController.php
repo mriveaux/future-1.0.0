@@ -14,6 +14,7 @@ class DirectaController extends ControllerSecure {
         $this->_integrator->setModels('capitalhumano', 'Controlpersonal');
         $this->_integrator->setModels('estructuraorg', 'Entidades');
         $this->_integrator->setModels('estructuraorg', 'Plantilla');
+        $this->Areaentidad = new Areaentidad();
     }
 
     public function directaAction() {
@@ -34,6 +35,10 @@ class DirectaController extends ControllerSecure {
 
     public function savedirectaAction() {
         echo json_encode($this->directaModel->addDirecta($this->dataPost, $this->dataSession->datiduser, $this->dataSession->identidad));
+    }
+
+    function cargarareaentidadAction() {
+        echo json_encode($this->Areaentidad->cargarAreaEntidad($this->dataRest));
     }
 
 }

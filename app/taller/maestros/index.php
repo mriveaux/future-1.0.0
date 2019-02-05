@@ -26,20 +26,43 @@ try {
     $prefijo_acc = 'Action';
     $prefijo_control = 'Controller';
     $_REQUEST['vista'] = dirname(__FILE__);
-    if (class_exists($url[count($url) - 2] . $prefijo_control)) {
-        $classname = $url[count($url) - 2] . $prefijo_control;
-        $my_object = new $classname();
-        $class_methods = get_class_methods(get_class($my_object));
 
-        if (is_numeric(array_search(end($url) . $prefijo_acc, $class_methods))) {
-            $accion = end($url) . $prefijo_acc;
-            $my_object->$accion();
-            new Aspect($path['path'], $classname, end($url));
-        } else {
-            trigger_error("The action <b>" . end($url) . "</b> doesn't exists on $classname.", E_USER_WARNING);
+    if (isset($_SERVER["PATH_INFO"])) {
+        $cai = '/^\/([a-z]+\w)\/([a-z]+\w)\/([0-9]+)$/';  // /controller/action/id
+        $ca = '/^\/([a-z]+\w)\/([a-z]+)$/';              // /controller/action
+        $ci = '/^\/([a-z]+\w)\/([0-9]+)$/';               // /controller/id
+        $c = '/^\/([a-z]+\w)$/';                             // /controller
+        $i = '/^\/([0-9]+)$/';                             // /id
+        $matches = array();
+        if (preg_match($cai, $_SERVER["PATH_INFO"], $matches)) {
+            $classname = $matches[1] . $prefijo_control;
+            $accion = $matches[2] . $prefijo_acc;
+            $id = $matches[3];
+        } else if (preg_match($ca, $_SERVER["PATH_INFO"], $matches)) {
+            $classname = $matches[1] . $prefijo_control;
+            $accion = $matches[2] . $prefijo_acc;
+        } else if (preg_match($ci, $_SERVER["PATH_INFO"], $matches)) {
+            $classname = $matches[1] . $prefijo_control;
+            $id = $matches[2];
+        } else if (preg_match($c, $_SERVER["PATH_INFO"], $matches)) {
+            $classname = $matches[1] . $prefijo_control;
+        } else if (preg_match($i, $_SERVER["PATH_INFO"], $matches)) {
+            $id = $matches[1];
         }
-    } else {
-        trigger_error("The class: " . $url[count($url) - 2]. " hasn't been able to get load.", E_USER_WARNING);
+
+        if (class_exists($classname)) {
+            $my_object = new $classname();
+            $class_methods = get_class_methods(get_class($my_object));
+
+            if (is_numeric(array_search($accion, $class_methods))) {
+                $my_object->$accion();
+                new Aspect($path['path'], $classname, end($url), $utiles->getArgParamsToJSON());
+            } else {
+                trigger_error("The action <b>" . $matches[2] . "</b> doesn't exists on $classname.", E_USER_WARNING);
+            }
+        } else {
+            trigger_error("The class: " . $matches[1] . " hasn't been able to get load.", E_USER_WARNING);
+        }
     }
 } catch (Exception $e) {
     Future_Logger::writeLogException($e);
