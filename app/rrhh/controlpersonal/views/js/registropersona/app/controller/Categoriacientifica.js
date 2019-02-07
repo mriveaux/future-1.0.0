@@ -32,11 +32,11 @@ Ext.define('Registropersona.controller.Categoriacientifica', {
     addCategoriacientifica: function() {
         var Tp = this.getModel('Categoriacientifica');
         this.getList_categoriacientifica().getStore().insert(0, new Tp());
-        this.getList_categoriacientifica().reCategoriacientifica.startEdit(0, 0);
+        this.getList_categoriacientifica().reCompetencias.startEdit(0, 0);
     },
     editCategoriacientifica: function(grid, record) {
         var selection = this.getList_categoriacientifica().getSelectionModel().getSelection()[0];
-        this.getList_categoriacientifica().reCategoriacientifica.startEdit(selection, 0);
+        this.getList_categoriacientifica().reCompetencias.startEdit(selection, 0);
     },
     delCategoriacientifica: function(grid, record) {
         var me = this;

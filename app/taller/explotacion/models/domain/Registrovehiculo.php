@@ -13,6 +13,7 @@ class Registrovehiculo extends Doctrine_Record {
         $this->hasOne('Nomestructura', array('local' => 'idestructura', 'foreign' => 'idestructura'));
         $this->hasOne('Bajavehiculo', array('local' => 'idregistrovehiculo', 'foreign' => 'idregistrovehiculo'));
         $this->hasMany('Planmantenimiento', array('local' => 'idregistrovehiculo', 'foreign' => 'idregistrovehiculo'));
+        $this->hasMany('Vehiculo', array('local' => 'idregistrovehiculo', 'foreign' => 'idvehiculo'));
     }
 
     public function setTableDefinition() {
@@ -105,6 +106,26 @@ class Registrovehiculo extends Doctrine_Record {
                 }
             }
             return array('data' => $data_return, 'total' => $count[0]['total']);
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
+
+    public function getRegistrovehiculoService($post) {
+        try {
+            $query = Doctrine_Query::create();
+            $cond = "rv.identidad =" . $_SESSION['identidad'] . " AND rv.baja = 0";
+            $query->select('rv.*, m.nombre, c.nombre, o.nombre, g.nombre, t.nombre, ne.nombre')
+                ->from('Registrovehiculo rv')
+                ->leftjoin('rv.Marcamodelo m, rv.Color c, rv.Organo o, rv.Grupoexplotacion g, rv.Tipovehiculo t, rv.Nomestructura ne')
+                ->where($cond)
+                ->offset($post->start)->limit($post->limit);
+//            $query->addOrderBy('rv.nomatricula');
+            $query->addOrderBy('m.nombre,rv.nomatricula');
+
+            $result = $query->setHydrationMode(Doctrine_Core::HYDRATE_RECORD)->execute();
+            $count = $result->count();
+            return array('data' => $result->toArray(), 'total' => $count);
         } catch (Exception $exc) {
             throw $exc;
         }

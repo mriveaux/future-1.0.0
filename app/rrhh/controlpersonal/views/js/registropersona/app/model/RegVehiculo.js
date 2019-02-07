@@ -1,0 +1,33 @@
+Ext.define('Registropersona.model.RegVehiculo', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'idvehiculo', mapping: 'idregistrovehiculo', type: 'int', useNull: true},
+        {name: 'colorsecundario'},
+        {name: 'idcolorsecundario'},
+        {name: 'idcolor'},
+        {name: 'idgrupoexplotacion'},
+        {name: 'idmarcamodelo'},
+        {name: 'idorgano'},
+        {name: 'idtipovehiculo'},
+        {name: 'tipovehiculo'},
+        {name: 'idtipofisico'},
+        {name: 'descorgano'},
+        {name: 'descgrupoexplotacion'},
+        {name: 'fecha'},
+        {name: 'desctipovehiculo'},
+        {name: 'descmarcamodelo'},
+        {name: 'anno'},
+        {name: 'serie'},
+        {name: 'desccolor'},
+        {name: 'nomatricula'},
+        {name: 'nochassis'},
+        {name: 'nomotor'},
+        {name: 'nocirculacion'},
+        {name: 'novin'},
+        {name: 'idestructura'},
+        {name: 'denominacionestruc'},
+        {name: 'observaciones'},
+        {name: 'baja'},
+        {name: 'base64img', type: 'string'}
+    ]
+});

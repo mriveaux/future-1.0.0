@@ -122,6 +122,12 @@ class Future_Post {
         }
     }
 
+    public function get($name) {
+        if (isset($_POST[$name])) {
+            return $_POST[$name];
+        }
+    }
+
     public function __isset($name) {
         return isset($_POST[$name]);
     }

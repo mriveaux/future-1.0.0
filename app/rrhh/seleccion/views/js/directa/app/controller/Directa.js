@@ -1,7 +1,7 @@
 Ext.define('Directa.controller.Directa', {
     extend: 'Ext.app.Controller',
     views: ['directa.Ficha', 'directa.TabPanelDirecta', 'directa.List', 'directa.ListSeleccion', 'directa.Edit'],
-    stores: ['Directa', 'Cargoplantilla', 'Selecciondirecta'],
+    stores: ['Directa', 'Cargoplantilla', 'Selecciondirecta', 'Area'],
     model: ['Directa', 'Cargoplantilla', 'Selecciondirecta'],
     refs: [
         {ref: 'ficha_persona', selector: 'ficha_persona'},
@@ -56,7 +56,13 @@ Ext.define('Directa.controller.Directa', {
         var me = this;
         var edit = me.getEdit_persona();
         var combo = edit.down('combo[name=cargoplantilla]');
+        var cbArea = edit.down('combo[name=area]');
         combo.getStore().load();
+        cbArea.getStore().load({
+            params:{
+                identidad: window.parent.perfil.identidad
+            }
+        });
     },
     onPersonaSelectionChange: function(sm, selected) {
         var me = this,

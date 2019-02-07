@@ -9,7 +9,7 @@ Ext.application({
     paths: {
         'Registropersona': '/app/rrhh/controlpersonal/views/js/registropersona/app'
     },
-    controllers: ['Registropersona', 'Docidentidad', 'Ciudadania', 'Contacto', 'Direccion', 'Tallaje', 'Nacimiento', 'Fenotipo', 'Categoriacientifica', 'Superacion', 'Formacion'],
+    controllers: ['Registropersona', 'Docidentidad', 'Ciudadania', 'Contacto', 'Direccion', 'Tallaje', 'Nacimiento', 'Fenotipo', 'Categoriacientifica', 'Superacion', 'Formacion', 'Competencias', 'Chequeomedico', 'Vehiculo'],
     views: ['registropersona.Ficha', 'registropersona.List'],
     launch: function() {
         Ext.tip.QuickTipManager.init();
