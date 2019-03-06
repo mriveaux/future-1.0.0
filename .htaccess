@@ -1,0 +1,65 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes +FollowSymLinks
+    </IfModule>
+
+    RewriteEngine On
+    RewriteBase /
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+</IfModule>
+
+# Defaults
+DefaultLanguage es
+AddDefaultCharset UTF-8
+
+# Disable browsing between directories
+Options None
+Options FollowSymLinks
+
+# Acelerate conections on the web, making good use of the opened conections.
+Header set Connection keep-alive
+
+# Enable compression Gzip, review httpd.conf:
+# LoadModule deflate_module modules/mod_deflate.so
+# LoadModule headers_module modules/mod_headers.so
+<IfModule mod_deflate.c>
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|html|php|txt|xml|gz)$">
+SetOutputFilter DEFLATE
+Header append Vary: Accept-Encoding
+</FilesMatch>
+</IfModule>
+
+<FilesMatch "^.*(error_log|php.ini|\.[hH][tT][aApP].*)$">
+Order deny,allow
+Deny from all
+</FilesMatch>
+
+# Disable checking of web browsers that delay the load of the web.
+Header unset ETag
+FileETag None
+
+# Handle the errors with custom templates
+ErrorDocument 400 /comun/Security/Header/400.html
+ErrorDocument 401 /comun/Security/Header/401.html
+ErrorDocument 403 /comun/Security/Header/403.html
+ErrorDocument 404 /comun/Security/Header/404.html
+ErrorDocument 500 /comun/Security/Header/500.html
+
+# In order not to have to unload again. Caducity 1 week.
+# ExpiresActive On
+# ExpiresDefault A3600
+# <filesmatch ".(jpg|JPG|gif|GIF|png|css|ico|js)$">
+# ExpiresDefault "access plus 1 week"
